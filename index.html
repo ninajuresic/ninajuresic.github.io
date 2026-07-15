@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nina Juresic — Product Designer</title>
+  <meta name="description" content="Product designer with 9+ years of experience across healthcare, SaaS, B2C and B2B products." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="images/e752f6eb7652f3aba586be9a76d777a0a67e1965.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Montserrat', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .video-wrap { position: relative; padding-top: 56.25%; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    /* Click-to-play YouTube */
+    .yt-player { background: #000; }
+    .yt-player img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; opacity: .85; transition: opacity .2s; }
+    .yt-player:hover img { opacity: 1; }
+    .yt-play-btn { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; pointer-events: none; }
+    .yt-play-btn svg { width: 68px; height: 48px; filter: drop-shadow(0 2px 8px rgba(0,0,0,.4)); transition: transform .2s; }
+    .yt-play-btn span { font-size: 13px; font-weight: 600; color: #fff; background: rgba(0,0,0,.55); padding: 4px 12px; border-radius: 20px; letter-spacing: .02em; }
+    .yt-player:hover .yt-play-btn svg { transform: scale(1.1); }
+    .yt-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    @media print {
+      #password-screen, #app > nav, .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- ═══════════════════════════ PASSWORD ═══════════════════════════ -->
+<div id="password-screen" class="fixed inset-0 z-[9999] bg-white flex items-center justify-center p-6">
+  <div class="w-full max-w-sm text-center" style="animation: fadeUp .5s cubic-bezier(.34,1.56,.64,1) both">
+    <h1 class="text-xl font-semibold text-[#1d1d1f] mb-3">Portfolio Access</h1>
+    <p class="text-sm text-[#86868b] mb-8 leading-relaxed">These projects were completed under NDA. Please enter the password to continue and do not share what you see.</p>
+    <input id="pw-input" type="password" placeholder="Enter password"
+      class="w-full px-4 py-3 rounded-[10px] border border-black/10 text-[#1d1d1f] text-sm bg-[#f5f5f7] focus:outline-none focus:ring-2 focus:ring-[#0071e3]/30 focus:border-[#0071e3] transition mb-2 placeholder-[#86868b]" />
+    <p id="pw-error" class="text-xs text-red-500 mb-3 min-h-[16px]"></p>
+    <button id="pw-submit" class="w-full bg-[#1d1d1f] text-white text-sm font-semibold py-3 rounded-[10px] hover:bg-black transition">Continue</button>
+  </div>
+</div>
+
+<style>
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+</style>
+
+<!-- ═══════════════════════════ APP ═══════════════════════════ -->
+<div id="app" style="display:none">
+
+<!-- ── GLOBAL NAV ── -->
+<nav id="main-nav" class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5 transition-shadow duration-300">
+  <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+    <div class="flex h-11 items-center justify-between">
+      <button class="text-[#1d1d1f] font-semibold tracking-tight text-sm" id="nav-home">Nina Juresic</button>
+      <div class="hidden md:flex items-center gap-8">
+        <button class="text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors" data-page="home" data-scroll="work">Work</button>
+        <a href="CV_Nina_Juresic.pdf" target="_blank" class="text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors">CV</a>
+        <a href="https://linkedin.com/in/nina-juresic" target="_blank" class="text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors">LinkedIn</a>
+        <a href="mailto:ninajuresic@gmail.com" class="text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors">ninajuresic@gmail.com</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 text-[#1d1d1f]">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-black/5 bg-white/95 backdrop-blur-xl">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <button class="text-sm text-[#1d1d1f] text-left hover:text-[#0071e3] transition-colors" data-page="home" data-scroll="work">Work</button>
+      <a href="CV_Nina_Juresic.pdf" target="_blank" class="text-sm text-[#0071e3]">CV</a>
+      <a href="https://linkedin.com/in/nina-juresic" target="_blank" class="text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors">LinkedIn</a>
+      <a href="mailto:ninajuresic@gmail.com" class="text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors">ninajuresic@gmail.com</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════════════════════ -->
+<div id="page-home">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white">
+    <div class="mx-auto max-w-4xl text-center px-6">
+      <p class="text-[24px] md:text-[26px] text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto">Having the ability to impact your surroundings is the greatest gift of all.</p>
+      <p class="text-[24px] md:text-[26px] text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto">I intend to use it well.</p>
+      <div class="mt-16">
+        <p class="text-lg text-[#86868b]">Check below three of my recent selected projects.</p>
+        <p class="text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20 inline-block">Check out my latest <a href="https://interview-pro--ninajuresic.replit.app/" target="_blank" rel="noopener" class="text-[#0071e3] hover:text-[#0077ed] transition-colors underline">vibe coding project</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="work" class="py-20 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="grid gap-20 md:gap-32">
+
+        <!-- Card 1: Kaphera (image left) -->
+        <div class="group cursor-pointer" data-project="kaphera">
+          <div class="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+              <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] aspect-[16/10] overflow-hidden">
+                <img src="images/Kaphera.png" alt="Kaphera Supply Chain Hub" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]" />
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Domain: Data Infrastructure</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Early-stage Startup</span>
+              </div>
+              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Kaphera</h2>
+              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">End-to-end product design for an early-stage data startup</p>
+              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">3 working prototypes built in Zed with Claude &mdash; Supply Chain Hub, Data Marketplace, and Research Portal &mdash; taking the product from early discovery through to delivered interfaces.</p>
+              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                <span class="text-sm font-medium">View Case Study</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: HealthTalk (text left) -->
+        <div class="group cursor-pointer" data-project="healthtalk">
+          <div class="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Domain: HealthTech</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web &amp; Mobile</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Enterprise SaaS</span>
+              </div>
+              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">HealthTalk</h2>
+              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">AI-Powered Clinical Documentation Platform</p>
+              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">Enterprise AI platform transforming clinical conversations into compliant medical documentation.</p>
+              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                <span class="text-sm font-medium">View Case Study</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+              <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] aspect-[16/10] overflow-hidden">
+                <img src="images/eaa8cba977fb4348a67b14410304306b18d692fb.png" alt="HealthTalk" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pitch V2 (image left) -->
+        <div class="group cursor-pointer" data-project="pitch">
+          <div class="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+              <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] aspect-[16/10] overflow-hidden">
+                <img src="images/4a2a93d768647bf00a836a3733cc288772164f19.png" alt="Pitch V2" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]" />
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Domain: Editorial</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Enterprise B2B</span>
+              </div>
+              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Pitch V2</h2>
+              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Internal Editorial Content Localization</p>
+              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">A platform used to create, initiate, manage, review, and track campaigns.</p>
+              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                <span class="text-sm font-medium">View Case Study</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Localization (text left) -->
+        <div class="group cursor-pointer" data-project="localization">
+          <div class="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Domain: Music Platform</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web</span>
+                <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Enterprise B2B</span>
+              </div>
+              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Localization System</h2>
+              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Radio-Friendly Song Cleaning Platform</p>
+              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">An application used to help clean explicit songs prior to playing them on radio stations.</p>
+              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                <span class="text-sm font-medium">View Case Study</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+              <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] aspect-[16/10] overflow-hidden">
+                <img src="images/fd90bc13c8eaa1108ecc5759253a45115e971d49.png" alt="Localization System" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#f5f5f7] py-12">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8 flex flex-col items-center justify-center gap-6 text-center">
+      <div>
+        <p class="font-semibold text-[#1d1d1f] mb-2 text-[20px]">Nina Juresic</p>
+        <p class="text-[#86868b]">Digital Product Designer</p>
+      </div>
+      <div class="flex gap-8">
+        <a href="https://linkedin.com/in/nina-juresic" target="_blank" class="text-[#424245] hover:text-[#0071e3] transition-colors text-sm">LinkedIn</a>
+        <a href="mailto:ninajuresic@gmail.com" class="text-[#424245] hover:text-[#0071e3] transition-colors text-sm">ninajuresic@gmail.com</a>
+      </div>
+      <div class="border-t border-black/5 pt-6 w-full max-w-2xl">
+        <p class="text-xs text-[#86868b]">© Nina Juresic — All projects shown under NDA</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /#page-home -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     HEALTHTALK CASE STUDY
+══════════════════════════════════════════════════════════ -->
+<div id="page-healthtalk" style="display:none">
+
+  <!-- Sub-nav -->
+  <div class="sticky top-[44px] z-40 bg-white/90 backdrop-blur-xl border-b border-black/5">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="flex h-10 items-center gap-6 overflow-x-auto scrollbar-hide text-sm">
+        <button class="text-[#86868b] hover:text-[#0071e3] transition-colors whitespace-nowrap shrink-0 font-medium" data-page="home">← Portfolio</button>
+        <div class="w-px h-4 bg-black/10 shrink-0"></div>
+        <a href="#ht-overview" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Overview</a>
+        <a href="#ht-ai-tools" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">AI Tools</a>
+        <a href="#ht-solutions" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Solutions</a>
+        <a href="#ht-results" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Results</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study Hero -->
+  <section class="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-20">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#0071e3]"></span>
+          <span class="text-sm font-medium">Lead Product Designer</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]">HealthTalk</h1>
+        <p class="text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug">AI-Powered Clinical Documentation Platform</p>
+        <p class="text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed">Enterprise AI platform transforming clinical conversations into compliant medical documentation.</p>
+        <div class="grid grid-cols-3 gap-6 mb-10 max-w-lg">
+          <div><p class="text-sm text-[#86868b] mb-1">Domain</p><p class="text-[#1d1d1f] font-medium text-sm">HealthTech</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Platform</p><p class="text-[#1d1d1f] font-medium text-sm">Web &amp; Mobile</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Type</p><p class="text-[#1d1d1f] font-medium text-sm">Enterprise SaaS</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview: Once Upon a Time -->
+  <section id="ht-overview" class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Once Upon a Time…</h2>
+        <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">Picture this: It's 6 PM. Dr. Sarah has just finished seeing her last patient—a heartfelt conversation about managing chronic pain. But her day isn't over. Not even close.</p>
+        <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">She opens her laptop and begins the dreaded task: writing clinical reports. One by one, she recalls each conversation, structures her notes into proper medical format, ensures everything meets compliance requirements. It's important work—but it's not why she became a doctor.</p>
+        <p class="text-lg text-[#1d1d1f] leading-relaxed">Hours pass. It's now 9 PM. Dr. Sarah closes her laptop, exhausted—not from healing patients, but from paperwork. And tomorrow? She'll do it all over again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enter HealthTalk -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Enter HealthTalk</h2>
+        <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">What if Dr. Sarah could just… talk to her patients and have everything documented automatically? What if the AI could listen, understand, and transform those conversations into perfectly structured clinical reports—while she focused on the person in front of her?</p>
+        <p class="text-lg text-[#1d1d1f] mb-10 leading-relaxed">That's exactly what HealthTalk does. It's not magic—it's thoughtful AI-powered design that turns hours of administrative burden into minutes of review time.</p>
+        <div class="rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white">
+          <p class="text-xl font-semibold mb-2">Dr. Sarah now leaves the clinic at 6:15 PM.</p>
+          <p class="text-white/90 text-lg leading-relaxed">Same patient care, zero overtime paperwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI as Design Partner -->
+  <section id="ht-ai-tools" class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center gap-2 rounded-full bg-[#af52de]/10 px-4 py-2 text-[#af52de] mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+            <span class="text-sm font-medium">Core Design Methodology</span>
+          </div>
+          <h2 class="font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight text-[36px]">AI as Design Partner</h2>
+          <p class="text-lg text-[#86868b] max-w-3xl mx-auto leading-relaxed">Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.</p>
+        </div>
+
+        <!-- Blue highlight block -->
+        <div class="mb-20 rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white">
+          <h3 class="font-semibold mb-5 text-[20px]">Core Principle: Real Users First, AI as Amplifier</h3>
+          <p class="text-white/90 text-lg leading-relaxed">While AI tools dramatically accelerated my process, all major design decisions were validated with real clinicians. AI helped me move faster, test more assumptions, and arrive at user interviews with sharper questions.</p>
+        </div>
+
+        <!-- 3-card grid -->
+        <h3 class="font-semibold text-[#1d1d1f] mb-12 text-center leading-tight text-[32px]">Three Ways AI Transformed My Design Process</h3>
+        <div class="grid gap-6 md:grid-cols-3 mb-16">
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10">
+              <svg class="w-6 h-6 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">AI Personas</h4>
+            <p class="text-[#86868b] leading-relaxed">Created realistic clinician personas to test ideas throughout the day</p>
+          </div>
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10">
+              <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 18 0M9 21 9 9"/></svg>
+            </div>
+            <h4 class="text-xl font-semibold text-[#1d1d1f] mb-3">Figma Make</h4>
+            <p class="text-[#86868b] leading-relaxed">Built and tested functional prototypes in hours instead of days</p>
+          </div>
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10">
+              <svg class="w-6 h-6 text-[#34c759]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4 class="text-xl font-semibold text-[#1d1d1f] mb-3">Iterative Testing</h4>
+            <p class="text-[#86868b] leading-relaxed">Validated assumptions daily before committing to high-fidelity designs</p>
+          </div>
+        </div>
+
+        <!-- ChatGPT Personas block -->
+        <div class="mb-16 rounded-[16px] bg-[#fbfbfd] p-10 lg:p-12 border border-black/5">
+          <div class="flex items-start gap-5 mb-8">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#af52de] text-white flex-shrink-0 font-semibold text-lg">AI</div>
+            <div>
+              <h3 class="font-semibold text-[#1d1d1f] mb-3 text-[20px]">ChatGPT Personas: Always-On Design Partners</h3>
+              <h4 class="text-xl font-semibold text-[#1d1d1f] mb-4">Why I Built AI Personas</h4>
+              <p class="text-[#1d1d1f] mb-4 leading-relaxed">Real user research is essential but happens in discrete sessions. Between those sessions, I needed a way to continuously pressure-test assumptions, explore edge cases, and refine flows without waiting for the next round of interviews.</p>
+              <p class="text-[#1d1d1f] leading-relaxed">Using ChatGPT, I created detailed personas based on real research — emergency room physicians, mental health therapists, general practitioners — each with specific workflows, pain points, technical comfort levels, and motivations.</p>
+            </div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-[20px] bg-[#af52de]/5 p-8 border border-[#af52de]/10">
+              <h4 class="font-semibold text-[#1d1d1f] mb-4">How I Used Them Daily</h4>
+              <ul class="space-y-3 text-[#1d1d1f]">
+                <li><strong class="font-semibold">Quick concept validation:</strong> Rapid feedback on new design directions</li>
+                <li><strong class="font-semibold">Edge case exploration:</strong> Surfacing scenarios before real user testing</li>
+                <li><strong class="font-semibold">Workflow walkthroughs:</strong> Talking through entire user journeys to identify friction points</li>
+              </ul>
+            </div>
+            <div class="rounded-[20px] bg-[#34c759]/5 p-8 border border-[#34c759]/10">
+              <h4 class="font-semibold text-[#1d1d1f] mb-4">Example: Template Flow</h4>
+              <p class="text-[#1d1d1f] leading-relaxed">After designing the template creation flow, I spent an afternoon querying three AI personas about the step-by-step process. This surfaced 8 specific usability concerns — all of which I addressed before showing the design to real users.</p>
+            </div>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3 mt-8">
+            <div class="rounded-[12px] overflow-hidden bg-white shadow-sm"><img src="images/fd8a3de05cd13ff0858630f3197e4fe7d41f67fa.png" alt="AI Personas in ChatGPT" class="w-full h-auto" /></div>
+            <div class="rounded-[12px] overflow-hidden bg-white shadow-sm"><img src="images/5a327e00c8a5f0c390fbf8364ddc4a1b484b3e4a.png" alt="AI design workflow" class="w-full h-auto" /></div>
+            <div class="rounded-[12px] overflow-hidden bg-white shadow-sm"><img src="images/b6efdc87f5c51d0f03395e3023b347141ed933e5.png" alt="Figma Make prototype" class="w-full h-auto" /></div>
+          </div>
+          <div class="mt-8 border-l-4 border-[#af52de] pl-6">
+            <p class="text-[#1d1d1f] text-lg italic">"The AI personas never replaced real users — they made me better prepared to learn from them."</p>
+          </div>
+        </div>
+
+        <!-- Figma Make block -->
+        <div class="mb-16 rounded-[16px] bg-[#fbfbfd] p-10 lg:p-12 border border-black/5">
+          <div class="flex items-start gap-5 mb-8">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0071e3] text-white flex-shrink-0 font-semibold text-lg">FM</div>
+            <div>
+              <h3 class="font-semibold text-[#1d1d1f] mb-3 text-[20px]">Figma Make: From Concept to Prototype in Hours</h3>
+              <p class="text-[#1d1d1f] leading-relaxed">HealthTalk involved complex, multi-step workflows with heavy data manipulation — transcripts being parsed into reports, templates driving AI behavior, permissions controlling access. Static mockups couldn't convey the nuance.</p>
+            </div>
+          </div>
+          <div class="rounded-[20px] bg-[#0071e3]/5 p-8 border border-[#0071e3]/10 mb-6">
+            <h4 class="font-semibold text-[#1d1d1f] mb-5">My Figma Make Workflow</h4>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[#0071e3] text-white flex-shrink-0 font-semibold text-sm">1</div>
+                <div><p class="text-[#1d1d1f] font-semibold mb-1">Design Core Screens (Figma)</p><p class="text-[#86868b] text-sm">Start in Figma, defining layouts, visual hierarchy, component patterns</p></div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[#0071e3] text-white flex-shrink-0 font-semibold text-sm">2</div>
+                <div><p class="text-[#1d1d1f] font-semibold mb-1">Build Functional Prototype (Figma Make)</p><p class="text-[#86868b] text-sm">Create working versions with real interactions, editing, and data flows</p></div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[#0071e3] text-white flex-shrink-0 font-semibold text-sm">3</div>
+                <div><p class="text-[#1d1d1f] font-semibold mb-1">Test with AI Personas + Stakeholders</p><p class="text-[#86868b] text-sm">Walk through prototypes with ChatGPT personas, then share with engineering</p></div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[#0071e3] text-white flex-shrink-0 font-semibold text-sm">4</div>
+                <div><p class="text-[#1d1d1f] font-semibold mb-1">Validate with Real Users</p><p class="text-[#86868b] text-sm">Test with actual clinicians — core interaction model already refined</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-[20px] bg-[#0071e3]/5 p-6 border border-[#0071e3]/10">
+            <p class="text-[#1d1d1f] font-semibold mb-2">Actual Example: MVP Prototype</p>
+            <a href="https://ht-mvp-a-prototype.figma.site" target="_blank" class="text-[#0071e3] hover:text-[#0077ed] underline ml-1">ht-mvp-a-prototype.figma.site</a>
+            <p class="text-[#86868b] text-sm mt-2">This prototype helped validate core recording and transcription flows before a single line of production code was written.</p>
+          </div>
+          <div class="mt-8 border-l-4 border-[#0071e3] pl-6">
+            <p class="text-[#1d1d1f] text-lg italic">"Figma Make transformed prototyping from a late-stage validation tool into a core part of my daily design thinking."</p>
+          </div>
+        </div>
+
+        <!-- AI Cycle: Dark block -->
+        <div class="rounded-[16px] bg-gradient-to-br from-[#1d1d1f] to-[#424245] p-12 text-white mb-16">
+          <h3 class="font-semibold mb-8 text-[20px]">The Complete AI-Augmented Design Cycle</h3>
+          <div class="space-y-5">
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">1</div><div><p class="font-semibold mb-1">Initial Research (Real Users)</p><p class="text-white/80 text-sm">Interview clinicians, observe workflows, understand pain points</p></div></div>
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">2</div><div><p class="font-semibold mb-1">Create AI Personas (ChatGPT)</p><p class="text-white/80 text-sm">Build realistic personas based on research findings</p></div></div>
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">3</div><div><p class="font-semibold mb-1">Ideate + Validate (ChatGPT Personas)</p><p class="text-white/80 text-sm">Test multiple concepts throughout the day, surface edge cases</p></div></div>
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">4</div><div><p class="font-semibold mb-1">Prototype (Figma Make)</p><p class="text-white/80 text-sm">Build functional, interactive prototypes to test flows and interactions</p></div></div>
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">5</div><div><p class="font-semibold mb-1">User Validation (Real Clinicians)</p><p class="text-white/80 text-sm">Test refined concepts with actual users — arrive with specific hypotheses</p></div></div>
+            <div class="flex items-start gap-5"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold text-sm">6</div><div><p class="font-semibold mb-1">Refine + Ship</p><p class="text-white/80 text-sm">Incorporate feedback, finalize designs, hand off to engineering</p></div></div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-block rounded-[16px] bg-white p-10 border-2 border-[#1d1d1f] shadow-lg max-w-3xl">
+            <h4 class="font-semibold text-[#1d1d1f] mb-5 text-[20px]">Key Takeaway</h4>
+            <p class="text-[#1d1d1f] text-lg leading-relaxed">AI tools didn't replace user research — they made every stage between research sessions more productive. I could test more ideas, catch more problems, and arrive at user interviews with better questions and sharper hypotheses.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions: The Conversation Begins -->
+  <section id="ht-solutions" class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto space-y-24">
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">The Conversation Begins</h2>
+          <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">Dr. Sarah sits down with her patient and taps "Start Recording" on her screen. From that moment, HealthTalk becomes her invisible assistant — listening attentively to every word. The interface shows her exactly who's speaking, captures the conversation in real-time, and displays her custom checklist right on screen.</p>
+          <div class="rounded-lg bg-white overflow-hidden shadow-sm">
+            <img src="images/0a73952c6dac023aede9bd3b9006dec6cc8d8513.png" alt="Recording interface" class="w-full h-auto object-contain rounded-md" />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Three Minutes Later…</h2>
+          <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">The consultation wraps up. Dr. Sarah says goodbye to her patient and taps "Generate Report." She grabs a coffee. By the time she's back at her desk — literally three minutes later — a complete, structured clinical report is waiting for her. Formatted in proper SOAP structure. All key details from the conversation included. Ready to submit.</p>
+          <p class="text-lg text-[#1d1d1f] mb-10 leading-relaxed">Need it in Spanish for the patient? One click. Ready to paste into the EHR? Copy and done. What used to take 45 minutes now takes 3 minutes of quick review and approval.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-s overflow-hidden bg-white shadow-sm"><img src="images/3b3d5b66f98df51607403257f8abdb99948db1ca.png" alt="Report generation" class="w-full h-auto object-contain rounded-[2px]" /></div>
+            <div class="rounded-s overflow-hidden bg-white shadow-sm"><img src="images/a5772b617f9c9a573cc86af8b82dee77041f1f33.png" alt="Report view" class="w-full h-auto object-contain rounded-[2px]" /></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">But Wait… Every Doctor is Different</h2>
+          <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">Dr. Sarah is a pain management specialist. Her colleague Dr. James is a psychiatrist. Their documentation needs are completely different. Cookie-cutter templates? Not happening.</p>
+          <p class="text-lg text-[#1d1d1f] mb-10 leading-relaxed">That's why HealthTalk lets doctors build their own custom templates — no coding required. A simple form-based builder with intuitive inputs and a live preview. The entire healthcare organization can standardize their documentation while each doctor personalizes their experience.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-s overflow-hidden bg-white shadow-sm"><img src="images/6cf241accd6f776ac2c62f6d5cf139967bf8f656.png" alt="Template builder" class="w-full h-auto object-contain rounded-[2px]" /></div>
+            <div class="rounded-s overflow-hidden bg-white shadow-sm"><img src="images/fd8a3de05cd13ff0858630f3197e4fe7d41f67fa.png" alt="Template preview" class="w-full h-auto object-contain rounded-[2px]" /></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">And It Goes Wherever You Go</h2>
+          <p class="text-lg text-[#1d1d1f] mb-10 leading-relaxed">Because doctors don't always work from their desks. They're making house calls, consulting in different wings, or reviewing notes between appointments. HealthTalk works beautifully on mobile too.</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="rounded-s inline-block"><img src="images/6082d8fca562aeb0f209193d54f6ed4ed9ea8363.png" alt="Mobile screen 1" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+            <div class="rounded-s inline-block"><img src="images/6cdfa4723c979d9e7933010e0511157cd19e3796.png" alt="Mobile screen 2" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+            <div class="rounded-s inline-block"><img src="images/9a25f545a8195403cbf4ba31d1b588af4dbb2aab.png" alt="Mobile screen 3" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+            <div class="rounded-s inline-block"><img src="images/218a8a7e82d3cfe0a35a95e1724291676a63f1cc.png" alt="Mobile screen 4" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+            <div class="rounded-s inline-block"><img src="images/51fee2204e22c29a5219d58a31e46153ab3b230c.png" alt="Mobile screen 5" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+            <div class="rounded-s inline-block"><img src="images/fbc5a715d4cc102214ca281710d2345a566ae7f8.png" alt="Mobile screen 6" class="w-full h-auto object-contain aspect-[9/16] rounded-lg" /></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Principles -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-16 text-center leading-tight">Design Principles I Applied</h2>
+        <div class="grid gap-6 md:grid-cols-2 mb-16">
+          <div class="rounded-[24px] bg-gradient-to-br from-[#0071e3]/5 to-[#0071e3]/10 p-8 border border-[#0071e3]/10">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3] text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Trust Before Automation</h4>
+            <p class="text-[#86868b] leading-relaxed">AI supports decisions, never hides logic. Always show the reasoning and allow human override.</p>
+          </div>
+          <div class="rounded-[24px] bg-gradient-to-br from-[#af52de]/5 to-[#af52de]/10 p-8 border border-[#af52de]/10">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de] text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Cognitive Load Reduction</h4>
+            <p class="text-[#86868b] leading-relaxed">Clear hierarchy and progressive disclosure ensure information is presented at the right time.</p>
+          </div>
+          <div class="rounded-[24px] bg-gradient-to-br from-[#34c759]/5 to-[#34c759]/10 p-8 border border-[#34c759]/10">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759] text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Clinical Alignment</h4>
+            <p class="text-[#86868b] leading-relaxed">Workflows mirror real clinical thinking patterns, making the tool feel natural to medical professionals.</p>
+          </div>
+          <div class="rounded-[24px] bg-gradient-to-br from-[#ff9500]/5 to-[#ff9500]/10 p-8 border border-[#ff9500]/10">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff9500] text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Scalability</h4>
+            <p class="text-[#86868b] leading-relaxed">Reusable components and patterns ensure consistency and faster iteration across features.</p>
+          </div>
+          <div class="rounded-[24px] bg-gradient-to-br from-[#ff3b30]/5 to-[#ff3b30]/10 p-8 border border-[#ff3b30]/10 md:col-span-2">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff3b30] text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Human-in-the-Loop AI</h4>
+            <p class="text-[#86868b] leading-relaxed">Clinicians always remain in control. AI provides suggestions and automation, but final decisions rest with medical professionals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results & Outcomes -->
+  <section id="ht-results" class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-tight">Results &amp; Outcomes</h2>
+          <p class="text-xl text-[#86868b]">High-level impact across productivity, adoption, and user satisfaction</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 mb-16">
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-[#0071e3]/20">
+            <div class="mb-5 flex items-center justify-between">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10 text-[#0071e3]"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div class="text-right"><p class="text-2xl font-semibold text-[#0071e3] text-[24px]">~25 min → 2–3 min</p></div>
+            </div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Documentation Time Reduced</h4>
+            <p class="text-[#86868b] text-sm">Reduced documentation time per session from approximately 25 minutes to 2–3 minutes</p>
+          </div>
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-[#af52de]/20">
+            <div class="mb-5 flex items-center justify-between">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10 text-[#af52de]"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+              <div class="text-right"><p class="text-2xl font-semibold text-[#af52de] text-[24px]">↑ Adoption</p></div>
+            </div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Increased Adoption</h4>
+            <p class="text-[#86868b] text-sm">Increased adoption of AI-generated reports across teams with high user satisfaction</p>
+          </div>
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-[#34c759]/20">
+            <div class="mb-5 flex items-center justify-between">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10 text-[#34c759]"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div class="text-right"><p class="text-2xl font-semibold text-[#34c759] text-[24px]">High Reuse</p></div>
+            </div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Template Reusability</h4>
+            <p class="text-[#86868b] text-sm">High reuse rate of organization-level templates, reducing redundant work</p>
+          </div>
+          <div class="rounded-[24px] bg-[#fbfbfd] p-8 border border-[#ff9500]/20">
+            <div class="mb-5 flex items-center justify-between">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff9500]/10 text-[#ff9500]"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="text-right"><p class="text-2xl font-semibold text-[#ff9500] text-[24px]">↑ Productivity</p></div>
+            </div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Productivity Gains</h4>
+            <p class="text-[#86868b] text-sm">Clear productivity gains visible in platform analytics across all user segments</p>
+          </div>
+        </div>
+        <div class="rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white text-center">
+          <svg class="mx-auto mb-6 h-16 w-16 text-white opacity-90" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h3 class="text-3xl font-semibold mb-5 text-[36px]">Meaningful Impact on Patient Care</h3>
+          <p class="text-white/90 text-lg leading-relaxed max-w-2xl mx-auto">By reducing administrative burden, HealthTalk allows clinicians to spend more time with patients — directly improving both clinician experience and patient outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-12 text-center leading-tight">Reflection</h2>
+        <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">Here's what I learned: The best healthcare technology doesn't try to replace doctors — it gives them their time back. Every minute saved on paperwork is a minute they can spend with patients, with their families, or simply recovering from the emotional weight of the job.</p>
+        <p class="text-lg text-[#1d1d1f] mb-12 leading-relaxed">My job wasn't to show off what AI could do. It was to create interfaces doctors could trust completely — where they could see the AI's reasoning, override decisions, and always feel in control. Because in healthcare, trust isn't a nice-to-have. It's the product.</p>
+        <div class="rounded-[16px] bg-gradient-to-br from-[#af52de]/5 to-[#0071e3]/5 p-10 border border-[#af52de]/10 mt-12">
+          <h3 class="text-2xl font-semibold text-[#1d1d1f] mb-6">Key Learnings</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4"><svg class="mt-1 h-7 w-7 flex-shrink-0 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><p class="font-semibold text-[#1d1d1f] mb-1">AI tools as design amplifiers</p><p class="text-[#86868b]">Using ChatGPT and Figma Make didn't replace user research — it made every moment between sessions more productive.</p></div></div>
+            <div class="flex items-start gap-4"><svg class="mt-1 h-7 w-7 flex-shrink-0 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><p class="font-semibold text-[#1d1d1f] mb-1">Trust is the foundation</p><p class="text-[#86868b]">In high-stakes domains like healthcare, transparency and human control aren't optional — they're the core of the product experience.</p></div></div>
+            <div class="flex items-start gap-4"><svg class="mt-1 h-7 w-7 flex-shrink-0 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><p class="font-semibold text-[#1d1d1f] mb-1">Rapid prototyping changes everything</p><p class="text-[#86868b]">Being able to build functional prototypes in hours fundamentally changed how I approach design — moving from static validation to continuous experimentation.</p></div></div>
+          </div>
+        </div>
+        <div class="mt-10 border-l-4 border-[#af52de] pl-6"><p class="text-[#1d1d1f] text-lg italic">"Designing AI products means designing trust, transparency, and human agency into every interaction."</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next -->
+  <div class="bg-[#1d1d1f] py-20 text-center px-6">
+    <p class="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Next Case Study</p>
+    <h3 class="text-2xl font-semibold text-white mb-8">Pitch V2 — Internal Editorial Content Localization</h3>
+    <button class="bg-white text-[#1d1d1f] font-semibold px-8 py-3 rounded-full text-sm hover:bg-[#f5f5f7] transition" data-project="pitch">View Next Project →</button>
+  </div>
+
+</div><!-- /#page-healthtalk -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PITCH V2 CASE STUDY
+══════════════════════════════════════════════════════════ -->
+<div id="page-pitch" style="display:none">
+
+  <!-- Sub-nav -->
+  <div class="sticky top-[44px] z-40 bg-white/90 backdrop-blur-xl border-b border-black/5">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="flex h-10 items-center gap-6 overflow-x-auto text-sm">
+        <button class="text-[#86868b] hover:text-[#0071e3] transition-colors whitespace-nowrap shrink-0 font-medium" data-page="home">← Portfolio</button>
+        <div class="w-px h-4 bg-black/10 shrink-0"></div>
+        <a href="#pv-overview" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Overview</a>
+        <a href="#pv-insights" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Insights</a>
+        <a href="#pv-solutions" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Solutions</a>
+        <a href="#pv-results" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Results</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="pv-overview" class="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-20">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#0071e3]"></span>
+          <span class="text-sm font-medium">Lead Product Designer</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]">Pitch V2</h1>
+        <p class="text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug">Internal Editorial Content Localization</p>
+        <p class="text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed">A platform used to create, initiate, manage, review, and track campaigns.</p>
+        <div class="grid grid-cols-3 gap-6 mb-10 max-w-lg">
+          <div><p class="text-sm text-[#86868b] mb-1">Domain</p><p class="text-[#1d1d1f] font-medium text-sm">Editorial</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Platform</p><p class="text-[#1d1d1f] font-medium text-sm">Web</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Type</p><p class="text-[#1d1d1f] font-medium text-sm">Enterprise B2B</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Problem</h2>
+        <div class="bg-[#f5f5f7] rounded-[16px] p-10 md:p-14">
+          <div id="pv-insights">
+            <h3 class="text-[20px] font-semibold text-[#1d1d1f] mb-4">Key Insights</h3>
+            <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">The project was done during corona, so all our communication was done through calls and emails. For the discovery phase, we used interviews as a research method.</p>
+            <p class="text-lg text-[#1d1d1f] leading-relaxed">Most of the insights are connected with hard communication between people on the same project. With their tight schedule, they need information fast — especially when there is a need for immediate action.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Complex workflow</h4><p class="text-[#86868b] text-sm">Multiple tools and platforms made the process inefficient</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">No progress tracking</h4><p class="text-[#86868b] text-sm">Impossible to see where projects stood at any given time</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Hard to manage people</h4><p class="text-[#86868b] text-sm">Difficult to track team members and their responsibilities</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">A lot of emailing</h4><p class="text-[#86868b] text-sm">Communication scattered across email threads</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Tight schedule</h4><p class="text-[#86868b] text-sm">Constant deadlines and sudden urgent tasks</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Scattered information</h4><p class="text-[#86868b] text-sm">Data exchange across different tools</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goal and Solutions + Personas -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-8 text-center">Goal and Solutions</h2>
+        <p class="text-lg text-[#1d1d1f] mb-12 leading-relaxed">Since organizations used many different tools for communication and data exchange, tracking the whole work process was impossible. Our goal was to create unique experiences to make their everyday tasks easier.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+          <div class="bg-[#f5f5f7] rounded-[16px] p-8"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center mb-4"><span class="text-white text-sm font-bold">1</span></div><h4 class="font-semibold text-[#1d1d1f] mb-2">Unified workflow management</h4><p class="text-[#86868b] text-sm">Provide tooling for handling the whole process of creating campaigns and tracking progress.</p></div>
+          <div class="bg-[#f5f5f7] rounded-[16px] p-8"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center mb-4"><span class="text-white text-sm font-bold">2</span></div><h4 class="font-semibold text-[#1d1d1f] mb-2">Integrated communication</h4><p class="text-[#86868b] text-sm">Move communication from emails to the application — connected with content and campaign data.</p></div>
+          <div class="bg-[#f5f5f7] rounded-[16px] p-8"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center mb-4"><span class="text-white text-sm font-bold">3</span></div><h4 class="font-semibold text-[#1d1d1f] mb-2">Permission management</h4><p class="text-[#86868b] text-sm">Manage people's permissions on the projects and campaigns.</p></div>
+        </div>
+
+        <h3 class="text-[32px] font-semibold text-[#1d1d1f] mb-10">Personas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-[#fbfbfd] rounded-[24px] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10"><svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Producer</h4>
+            <p class="text-[#86868b] leading-relaxed">Responsible for the creative aspects of the campaign, including developing playlists and generating ideas.</p>
+          </div>
+          <div class="bg-[#fbfbfd] rounded-[24px] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10"><svg class="w-6 h-6 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3 text-[18px]">Music Editor</h4>
+            <p class="text-[#86868b] leading-relaxed">Responsible for preparing and publishing the music materials required for the campaign.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Solution with videos -->
+  <section id="pv-solutions" class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-16 text-center leading-tight">Design Solution</h2>
+
+      <div class="space-y-24">
+
+        <!-- Dashboard -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">Dashboard</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">Dashboard — Projects list</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">List of projects on the left, project overview on the right</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Ability to expand phases and see a complete project commitment right on the dashboard</span></li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="yt-player relative overflow-hidden rounded-[16px] shadow-lg cursor-pointer" data-vid="AydJrLVAIEU">
+              <img src="https://i.ytimg.com/vi/AydJrLVAIEU/hqdefault.jpg" alt="Dashboard Demo" class="w-full block" />
+              <div class="yt-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg><span>Watch on YouTube</span></div>
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">Dashboard Demo Video</p>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">Project</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">Project commitment &amp; collaboration</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Project commitment summary accessible in one click</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Tabs for grouped information</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Project collaboration</span></li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="yt-player relative overflow-hidden rounded-[16px] shadow-lg cursor-pointer" data-vid="3LPDhpovANg">
+              <img src="https://i.ytimg.com/vi/3LPDhpovANg/hqdefault.jpg" alt="Project Demo" class="w-full block" />
+              <div class="yt-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg><span>Watch on YouTube</span></div>
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">Project Demo Video</p>
+          </div>
+        </div>
+
+        <!-- Phase -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">Phase</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">Phase commitment &amp; collaboration</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Phase commitment summary accessible in one click</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Phase collaboration</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Information layout pattern same as on project page for easy learning</span></li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="yt-player relative overflow-hidden rounded-[16px] shadow-lg cursor-pointer" data-vid="bQanONngQRU">
+              <img src="https://i.ytimg.com/vi/bQanONngQRU/hqdefault.jpg" alt="Phase Demo" class="w-full block" />
+              <div class="yt-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg><span>Watch on YouTube</span></div>
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">Phase Demo Video</p>
+          </div>
+        </div>
+
+        <!-- Phase Edit -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">Phase Edit</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">Editing Phase</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Easy Edit mode</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Featuring play layout redesigned</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Showing only needed featuring plan</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">A consistent pattern used on project brief to create stability and confidence in users</span></li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="yt-player relative overflow-hidden rounded-[16px] shadow-lg cursor-pointer" data-vid="aFzUIfVHNIE">
+              <img src="https://i.ytimg.com/vi/aFzUIfVHNIE/hqdefault.jpg" alt="Phase Edit Demo" class="w-full block" />
+              <div class="yt-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg><span>Watch on YouTube</span></div>
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">Phase Edit Demo Video</p>
+          </div>
+        </div>
+
+        <!-- In-app Notifications -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">In-app Notifications</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">In-app notifications</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">All notifications in one place</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2"></div><span class="text-lg text-[#1d1d1f]">Ability to click on the specific notification that would lead to project/phase notification or comment it is referring to</span></li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="yt-player relative overflow-hidden rounded-[16px] shadow-lg cursor-pointer" data-vid="t7mHwKJoqE4">
+              <img src="https://i.ytimg.com/vi/t7mHwKJoqE4/hqdefault.jpg" alt="In-app Notifications Demo" class="w-full block" />
+              <div class="yt-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg><span>Watch on YouTube</span></div>
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">In-app Notifications Demo Video</p>
+          </div>
+        </div>
+
+        <!-- Reporting -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <p class="text-sm text-[#86868b] mb-4 uppercase tracking-wide">Reporting</p>
+            <h3 class="font-semibold text-[#1d1d1f] mb-8 text-[22px]">Email reports</h3>
+            <p class="text-lg text-[#1d1d1f] mb-6 leading-relaxed">When there are a lot of projects going on and you want to be updated on the most important campaigns, email reports come in handy. We made email reports personalized so users can decide what information is important to them.</p>
+            <p class="text-lg text-[#1d1d1f] leading-relaxed">First, we added all the information we can to our report. Second, we had clean-up sessions with users and removed unnecessary data. We pushed the cleaned version to production to see how it will be received.</p>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="relative overflow-hidden rounded-[16px] shadow-lg bg-white">
+              <img src="images/2f38c5230f1c0986a6c08815c42ff904d5723fda.png" alt="Pitch Daily Report email interface" class="w-full h-auto" />
+            </div>
+            <p class="text-center text-lg text-[#1d1d1f] mt-6 font-medium">Pitch Daily Report email interface</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="pv-results" class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-16 text-center leading-tight">Impact</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-[16px] p-10 text-center shadow-sm border border-black/5">
+            <p class="text-5xl md:text-6xl font-semibold text-[#0071e3] mb-4">1</p>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Unified platform</h4>
+            <p class="text-[#86868b] text-sm">Tool for all editorial workflows</p>
+          </div>
+          <div class="bg-white rounded-[16px] p-10 text-center shadow-sm border border-black/5">
+            <p class="text-5xl md:text-6xl font-semibold text-[#0071e3] mb-4">3+</p>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">Continents</h4>
+            <p class="text-[#86868b] text-sm">Global reach</p>
+          </div>
+          <div class="bg-white rounded-[16px] p-10 text-center shadow-sm border border-black/5">
+            <p class="text-5xl md:text-6xl font-semibold text-[#0071e3] mb-4">∞</p>
+            <h4 class="font-semibold text-[#1d1d1f] mb-2">All connected</h4>
+            <p class="text-[#86868b] text-sm">Teams unified across the platform</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next -->
+  <div class="bg-[#1d1d1f] py-20 text-center px-6">
+    <p class="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Next Case Study</p>
+    <h3 class="text-2xl font-semibold text-white mb-8">Localization System — Radio-Friendly Song Cleaning</h3>
+    <button class="bg-white text-[#1d1d1f] font-semibold px-8 py-3 rounded-full text-sm hover:bg-[#f5f5f7] transition" data-project="localization">View Next Project →</button>
+  </div>
+
+</div><!-- /#page-pitch -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     LOCALIZATION CASE STUDY
+══════════════════════════════════════════════════════════ -->
+<div id="page-localization" style="display:none">
+
+  <!-- Sub-nav -->
+  <div class="sticky top-[44px] z-40 bg-white/90 backdrop-blur-xl border-b border-black/5">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="flex h-10 items-center gap-6 overflow-x-auto text-sm">
+        <button class="text-[#86868b] hover:text-[#0071e3] transition-colors whitespace-nowrap shrink-0 font-medium" data-page="home">← Portfolio</button>
+        <div class="w-px h-4 bg-black/10 shrink-0"></div>
+        <a href="#loc-overview" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Overview</a>
+        <a href="#loc-research" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Research</a>
+        <a href="#loc-solution" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Solution</a>
+        <a href="#loc-results" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Results</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="loc-overview" class="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-20">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#0071e3]"></span>
+          <span class="text-sm font-medium">Lead Product Designer</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]">Localization System</h1>
+        <p class="text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug">Radio-Friendly Song Cleaning Platform</p>
+        <p class="text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed">An application used to help clean explicit songs prior to playing them on radio stations. The software simplifies the process for teams across music platforms.</p>
+        <div class="grid grid-cols-3 gap-6 mb-10 max-w-lg">
+          <div><p class="text-sm text-[#86868b] mb-1">Domain</p><p class="text-[#1d1d1f] font-medium text-sm">Music Platform</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Platform</p><p class="text-[#1d1d1f] font-medium text-sm">Web</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Type</p><p class="text-[#1d1d1f] font-medium text-sm">Enterprise B2B</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Problems</h2>
+        <div class="bg-[#f5f5f7] rounded-[16px] p-10 md:p-14 mb-12">
+          <h3 class="text-[20px] font-semibold text-[#1d1d1f] mb-4">Key Insights</h3>
+          <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">By conducting onsite discovery research, mapping workflow, and user persona information, I could visualize the main points that helped me determine possible MVP solutions.</p>
+          <ul class="text-[#1d1d1f] space-y-2 mb-6 text-sm list-disc list-inside">
+            <li>Most Producers are in US or UK timezones</li>
+            <li>People who are doing localization are all around the world</li>
+            <li>Communication and getting things done fast is a priority for all</li>
+          </ul>
+          <p class="text-lg text-[#1d1d1f] leading-relaxed">It can take days for a producer to get a response from the localization of their requested song. We set the goal to make producers know the progress of cleaning all the time so they can plan radio playlists with ease.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Scattered communication</h4><p class="text-[#86868b] text-sm">Communication done through emails and telephone, making tracking difficult</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Lost documentation</h4><p class="text-[#86868b] text-sm">Data exchange through different tools easily lost or misplaced</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">No progress tracking</h4><p class="text-[#86868b] text-sm">Hard to follow work progress and assigned team members</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Timezone challenges</h4><p class="text-[#86868b] text-sm">Different time zones make communication even harder</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Contact confusion</h4><p class="text-[#86868b] text-sm">Hard to find assigned contacts for quick action</p></div>
+            <div class="bg-white rounded-[16px] p-8 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Manual data transfer</h4><p class="text-[#86868b] text-sm">Transferring flagged content information to other software</p></div>
+          </div>
+        </div>
+
+        <!-- Goals callout -->
+        <div class="bg-gradient-to-br from-[#0071e3] to-[#0051ba] rounded-[16px] p-12 text-white text-center">
+          <h3 class="text-2xl font-semibold mb-6">Goal and Solutions</h3>
+          <p class="leading-relaxed text-[24px] text-white/90 max-w-2xl mx-auto">Make one unified platform. Smart notifications. Simplified processes. Single source of truth.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-10">
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Unified platform</h4><p class="text-[#86868b] text-sm">Make one tool for people in charge of creating tasks and people assigned for the same.</p></div>
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Smart notifications</h4><p class="text-[#86868b] text-sm">Have a notification system with timezones in mind so everyone gets what they need on time.</p></div>
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Reduced email clutter</h4><p class="text-[#86868b] text-sm">Make email inboxes less crowded.</p></div>
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Single source of truth</h4><p class="text-[#86868b] text-sm">Have one source of truth so there is no misunderstanding.</p></div>
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Simplified processes</h4><p class="text-[#86868b] text-sm">Streamline workflows to reduce complexity.</p></div>
+          <div class="bg-white rounded-[16px] p-8 md:p-10 shadow-sm"><h4 class="font-semibold text-[#1d1d1f] mb-2">Seamless integrations</h4><p class="text-[#86868b] text-sm">Integrations for easy export and import of data.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="loc-research" class="py-24 md:py-32 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight">Empathise, Understand</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-[24px] font-semibold text-[#1d1d1f] mb-4">London Visit</h3>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Team of: designer, head of delivery, team lead, and project manager visited stakeholders and users in London.</p>
+            <p class="text-lg text-[#1d1d1f] leading-relaxed">We had a couple of long days of talking and questioning the people in the studio. The main focus was understanding workflows and gathering data that help us in future decisions.</p>
+          </div>
+          <div class="rounded-[16px] overflow-hidden bg-[#f5f5f7]">
+            <img src="images/d21e651b1db07ad64688cb7c2638a15850076e8e.png" alt="London visit" class="w-full h-auto" />
+            <p class="text-sm text-[#86868b] mt-4 italic text-center pb-4">Contemplating ideas in the evening.</p>
+          </div>
+        </div>
+
+        <h3 class="text-[32px] font-semibold text-[#1d1d1f] mb-10">Personas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-[#fbfbfd] rounded-[24px] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10"><svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3">Producers</h4>
+            <p class="text-[#86868b] text-sm leading-relaxed">People who are making playlists for their radio shows. They need clean songs or songs flagged explicit content. Their timeframe is tight and usually, they work ad hoc.</p>
+          </div>
+          <div class="bg-[#fbfbfd] rounded-[24px] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10"><svg class="w-6 h-6 text-[#af52de]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3">Content Operations</h4>
+            <p class="text-[#86868b] text-sm leading-relaxed">People who are in between producers and localization. They get the list of songs, create tasks, follow the progress and make sure songs are cleaned in time.</p>
+          </div>
+          <div class="bg-[#fbfbfd] rounded-[24px] p-8 border border-black/5">
+            <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10"><svg class="w-6 h-6 text-[#34c759]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+            <h4 class="font-semibold text-[#1d1d1f] mb-3">Localization</h4>
+            <p class="text-[#86868b] text-sm leading-relaxed">People with multilingual skills all around the world. Their task is to listen to the song, find explicit content, flag it and send it back to content operation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Solution -->
+  <section id="loc-solution" class="py-24 md:py-32 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-4 leading-tight">Design Solution</h2>
+        <p class="text-xl text-[#86868b] mb-16">Define, Ideate, Prototype, Test, and Do It Again :)</p>
+
+        <div class="space-y-16">
+          <div>
+            <h3 class="text-[24px] font-semibold text-[#1d1d1f] mb-6">Information Architecture</h3>
+            <div class="rounded-[16px] overflow-hidden bg-white shadow-sm">
+              <img src="images/703063a87b088b44c49bc65df82e177a8287729d.png" alt="Information architecture" class="w-full h-auto" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-[24px] font-semibold text-[#1d1d1f] mb-3">Overview of Tasks</h3>
+            <p class="text-[#86868b] mb-6 leading-relaxed">Task details screen with full localization tool. Aside from having a task list, they needed filtering, pausing, reassigning the task, and option to listen to the song.</p>
+            <div class="rounded-[16px] overflow-hidden bg-white shadow-sm">
+              <img src="images/766eaf34e43bf656347fe6371d4ac776a8e7ca62.png" alt="Task overview" class="w-full h-auto object-contain rounded-[2px]" />
+              <p class="text-sm text-[#86868b] mt-4 italic text-center pb-4">Admin task list screen</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-[24px] font-semibold text-[#1d1d1f] mb-3">Song Details</h3>
+            <p class="text-[#86868b] mb-6 leading-relaxed">Aside from metadata of the song, the task details screen had to contain song lyrics and a full overview of song localization status. Admins can assign or reassign people since it is a fast pace workflow.</p>
+            <div class="rounded-[16px] overflow-hidden bg-white shadow-sm">
+              <img src="images/79cb901a703237a8a2285a5284537e81fe0e7792.png" alt="Song details" class="w-full h-auto object-contain rounded-[2px]" />
+              <p class="text-sm text-[#86868b] mt-4 italic text-center pb-4">Song details screen</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-[24px] font-semibold text-[#1d1d1f] mb-3">Localization Screen</h3>
+            <p class="text-[#86868b] mb-6 leading-relaxed">People who work in localization had a task list from where they can claim the task. In task details, they have a waveform, song lyrics, and the option to flag explicit content with notes. Challenge was to build the option of selecting lyrics and having them displayed on the waveform and in the flag list at the same time.</p>
+            <div class="rounded-[16px] overflow-hidden bg-white shadow-sm">
+              <img src="images/5a4078f2415d3c851376da8a411a9721db07b6ab.png" alt="Localization screen with waveform" class="w-full h-auto" />
+              <p class="text-sm text-[#86868b] mt-4 italic text-center pb-4">Localization screen with waveform</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 bg-gradient-to-br from-[#1d1d1f] to-[#424245] rounded-[16px] p-12 text-white">
+          <h3 class="font-semibold mb-4 text-[20px]">Time for Deep-Dive QA Iterations</h3>
+          <p class="text-white/90 leading-relaxed mb-4">During development feature by feature, constant quality assurance is a must. Designers are perfect for finding mistakes in the UI. They know how things should look and behave.</p>
+          <p class="text-white/80 leading-relaxed">After each sprint, I would spend a couple of hours reviewing the application. This way we keep the quality of design at a high level, especially when working with top clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next -->
+  <div id="loc-results" class="bg-[#1d1d1f] py-20 text-center px-6">
+    <p class="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Next Case Study</p>
+    <h3 class="text-2xl font-semibold text-white mb-8">Kaphera &mdash; Data Infrastructure Prototypes</h3>
+    <button class="bg-white text-[#1d1d1f] font-semibold px-8 py-3 rounded-full text-sm hover:bg-[#f5f5f7] transition" data-project="kaphera">View Next Project &rarr;</button>
+  </div>
+
+</div><!-- /#page-localization -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     KAPHERA CASE STUDY
+══════════════════════════════════════════════════════════ -->
+<div id="page-kaphera" style="display:none">
+
+  <!-- Sub-nav -->
+  <div class="sticky top-[44px] z-40 bg-white/90 backdrop-blur-xl border-b border-black/5">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="flex h-10 items-center gap-6 overflow-x-auto text-sm">
+        <button class="text-[#86868b] hover:text-[#0071e3] transition-colors whitespace-nowrap shrink-0 font-medium" data-page="home">&larr; Portfolio</button>
+        <div class="w-px h-4 bg-black/10 shrink-0"></div>
+        <a href="#kap-overview" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Overview</a>
+        <a href="#kap-supply" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Supply Chain Hub</a>
+        <a href="#kap-marketplace" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Data Marketplace</a>
+        <a href="#kap-research" class="text-[#86868b] hover:text-[#1d1d1f] transition-colors whitespace-nowrap shrink-0">Research Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="kap-overview" class="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-20">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#0071e3]"></span>
+          <span class="text-sm font-medium">Freelance Product Designer &mdash; Feb 2026&ndash;Present</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]">Kaphera</h1>
+        <p class="text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug">End-to-end product design for an early-stage data startup</p>
+        <p class="text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed">Sole designer working directly with the founders. Taking the product from early-stage discovery through to working prototypes, built in Zed with Claude.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 max-w-2xl">
+          <div><p class="text-sm text-[#86868b] mb-1">Domain</p><p class="text-[#1d1d1f] font-medium text-sm">Data Infrastructure</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Platform</p><p class="text-[#1d1d1f] font-medium text-sm">Web</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Team size</p><p class="text-[#1d1d1f] font-medium text-sm">~4 people</p></div>
+          <div><p class="text-sm text-[#86868b] mb-1">Status</p><p class="text-[#1d1d1f] font-medium text-sm">Ongoing</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="py-20 md:py-28 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-tight">The Engagement</h2>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Kaphera is an early-stage startup building infrastructure for governed data exchange. I joined as the sole designer, working directly with the product owner and engineering team of four.</p>
+            <p class="text-lg text-[#1d1d1f] leading-relaxed">No layers of process &mdash; just close collaboration with the founders, moving fast from discovery to delivered interfaces. End-to-end ownership of the product design.</p>
+          </div>
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-tight">How I Work Here</h2>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Rather than building static mockups, I produce working coded prototypes using Zed and Claude. This gives the engineering team something they can run, test, and build directly from &mdash; and gives stakeholders a real feel for the product before a line of production code is written.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="inline-flex items-center rounded-full bg-[#0071e3]/10 px-3 py-1.5 text-xs font-medium text-[#0071e3]">Zed + Claude</span>
+              <span class="inline-flex items-center rounded-full bg-[#0071e3]/10 px-3 py-1.5 text-xs font-medium text-[#0071e3]">Coded prototypes</span>
+              <span class="inline-flex items-center rounded-full bg-[#0071e3]/10 px-3 py-1.5 text-xs font-medium text-[#0071e3]">Early-stage discovery</span>
+              <span class="inline-flex items-center rounded-full bg-[#0071e3]/10 px-3 py-1.5 text-xs font-medium text-[#0071e3]">End-to-end ownership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 1: Supply Chain Hub -->
+  <section id="kap-supply" class="py-20 md:py-28 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-sm text-[#86868b] mb-3 uppercase tracking-wide">Project 01</p>
+            <h2 class="text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4 leading-tight">Supply Chain Hub</h2>
+            <p class="text-xl text-[#86868b] mb-8 leading-relaxed">Real-time visibility across your supply chain.</p>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Track every PO across all routes. Delivery date visibility powered by connected vendor data. Anomalies surface before they become problems.</p>
+            <a href="https://prototype-omega-sepia.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Prototype
+            </a>
+          </div>
+          <div class="relative overflow-hidden rounded-[16px] shadow-lg bg-white">
+            <img src="images/kaphera-supply-chain.png" alt="Supply Chain Hub prototype" class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 2: Data Marketplace -->
+  <section id="kap-marketplace" class="py-20 md:py-28 bg-[#fbfbfd]">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="lg:order-2">
+            <p class="text-sm text-[#86868b] mb-3 uppercase tracking-wide">Project 02</p>
+            <h2 class="text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4 leading-tight">Data Marketplace</h2>
+            <p class="text-xl text-[#86868b] mb-8 leading-relaxed">Sovereign data exchange, governed by policy.</p>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Buy and sell datasets with machine-readable access contracts. Every transaction is auditable. No data leaves without your rules in place.</p>
+            <a href="https://attest-chi.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Prototype
+            </a>
+          </div>
+          <div class="relative overflow-hidden rounded-[16px] shadow-lg bg-white lg:order-1">
+            <img src="images/kaphera-data-marketplace.png" alt="Data Marketplace prototype" class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 3: Research Portal -->
+  <section id="kap-research" class="py-20 md:py-28 bg-white">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-sm text-[#86868b] mb-3 uppercase tracking-wide">Project 03</p>
+            <h2 class="text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4 leading-tight">Research Portal</h2>
+            <p class="text-xl text-[#86868b] mb-8 leading-relaxed">Policy-governed access for sensitive research data.</p>
+            <p class="text-lg text-[#1d1d1f] mb-4 leading-relaxed">Submit reproducibility packages with ODRL contracts enforced at the connector level. Reviewer access expires automatically. No manual revocation required.</p>
+            <a href="https://prototype-verify.vercel.app/marketplace" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Prototype
+            </a>
+          </div>
+          <div class="relative overflow-hidden rounded-[16px] shadow-lg bg-white">
+            <img src="images/kaphera-research-portal.png" alt="Research Portal prototype" class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next -->
+  <div class="bg-[#1d1d1f] py-20 text-center px-6">
+    <p class="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Next Case Study</p>
+    <h3 class="text-2xl font-semibold text-white mb-8">HealthTalk &mdash; AI-Powered Clinical Documentation</h3>
+    <button class="bg-white text-[#1d1d1f] font-semibold px-8 py-3 rounded-full text-sm hover:bg-[#f5f5f7] transition" data-project="healthtalk">View Next Project &rarr;</button>
+  </div>
+
+</div><!-- /#page-kaphera -->
+
+</div><!-- /#app -->
+
+<script src="app.js"></script>
+</body>
+</html>

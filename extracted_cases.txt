@@ -1,0 +1,706 @@
+======================================================================
+FUNCTION FINGERPRINTS (non-trivial functions)
+======================================================================
+
+function q()  lines 201-445  (244 lines)
+  First texts: ['Nina Juresic', 'Work', 'Download CV', 'Having the ability to impact your surroundings is the greatest gift of all.']
+  hrefs: ['#', '#work', 'https://interview-pro--ninajuresic.replit.app/']
+
+function te()  lines 488-693  (205 lines)
+  First texts: ['Core Design Methodology', 'AI as Design Partner', 'Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.', 'Core Principle: Real Users First, AI as Amplifier']
+  hrefs: ['https://ht-mvp-a-prototype.figma.site']
+
+function xe()  lines 698-808  (110 lines)
+  First texts: ['The Conversation Begins', 'No fumbling with notepads. No mental juggling. Just a natural conversation with a safety net that ensures nothing falls through the cracks.', 'Three Minutes Later...', "By the time she's back at her desk—literally three minutes later—a complete, structured clinical report is waiting for her. It's formatted in proper SOAP structure, includes all the key details from the conversation, and even has a patient-friendly summary ready to go."]
+
+function pe()  lines 809-850  (41 lines)
+  First texts: ['Design Principles I Applied', 'Trust Before Automation', 'AI supports decisions, never hides logic. Always show the reasoning and allow human override.', 'Cognitive Load Reduction']
+
+function ge()  lines 851-911  (60 lines)
+  First texts: ['Results & Outcomes', 'High-level impact across productivity, adoption, and user satisfaction', '~25 min → 2–3 min', 'Documentation Time Reduced']
+
+function fe()  lines 912-958  (46 lines)
+  First texts: ['Reflection', "Here's what I learned: The best healthcare technology doesn't try to replace doctors—it gives them their time back. Every minute saved on paperwork is a minute they can spend with patients, with their families, or simply catching their breath.", "My job wasn't to show off what AI could do. It was to create interfaces doctors could trust completely—where they could see the AI's reasoning, override decisions, and always feel in control. Because in healthcare, transparency isn't a nice-to-have. It's everything.", 'Key Learnings']
+
+function ue()  lines 959-1042  (83 lines)
+  First texts: ['Portfolio', 'Overview', 'AI Tools', 'Solutions']
+  hrefs: ['#overview', '#ai-tools', '#solutions']
+
+function ve()  lines 1043-1406  (363 lines)
+  First texts: ['Portfolio', 'Overview', 'Insights', 'Solutions']
+  YouTube: ['https://www.youtube.com/embed/AydJrLVAIEU', 'https://www.youtube.com/embed/3LPDhpovANg', 'https://www.youtube.com/embed/bQanONngQRU', 'https://www.youtube.com/embed/aFzUIfVHNIE', 'https://www.youtube.com/embed/t7mHwKJoqE4']
+  hrefs: ['#overview', '#insights', '#solutions']
+
+function Ie()  lines 1407-1714  (307 lines)
+  First texts: ['Portfolio', 'Overview', 'Research', 'Solution']
+  hrefs: ['#overview', '#research', '#solution']
+
+function Ae()  lines 1715-1769  (54 lines)
+  First texts: ['Portfolio Access', 'These projects were completed under NDA. Please enter the password to continue and do not share what you see.', 'Password', 'Incorrect password. Please try again.']
+
+
+======================================================================
+DETAILED CASE STUDY SECTIONS
+======================================================================
+
+======================================================================
+  FUNCTION q  (function q, lines 201-445)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+
+--- text content ---
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+
+--- hrefs ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+
+======================================================================
+  FUNCTION te  (function te, lines 488-693)
+======================================================================
+
+--- classNames ---
+  py-24 md:py-32 bg-white
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  max-w-5xl mx-auto
+  text-center mb-20
+  inline-flex items-center gap-2 rounded-full bg-[#af52de]/10 px-4 py-2 text-[#af52de] mb-6
+  text-sm font-medium
+  font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight text-[36px]
+  text-lg text-[#86868b] max-w-3xl mx-auto leading-relaxed
+  mb-20 overflow-hidden rounded-[16px] bg-white shadow-lg
+  h-full w-full object-cover
+  mb-20 rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white
+  font-semibold mb-5 text-[20px]
+  text-white/90 text-lg leading-relaxed
+  mb-20
+  font-semibold text-[#1d1d1f] mb-12 text-center leading-tight text-[32px]
+  grid gap-6 md:grid-cols-3 mb-16
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10
+  font-semibold text-[#1d1d1f] mb-3 text-[18px]
+  text-[#86868b] leading-relaxed
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10
+  mb-16 rounded-[16px] bg-[#fbfbfd] p-10 lg:p-12 border border-black/5
+  flex items-start gap-5 mb-8
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#af52de] text-white flex-shrink-0 font-semibold text-lg
+  font-semibold text-[#1d1d1f] mb-3 text-[20px]
+  text-lg text-[#86868b]
+  space-y-8
+  text-xl font-semibold text-[#1d1d1f] mb-4
+  text-[#1d1d1f] mb-4 leading-relaxed
+  text-[#1d1d1f] leading-relaxed
+  rounded-[20px] bg-[#af52de]/5 p-8 border border-[#af52de]/10
+  text-xl font-semibold text-[#1d1d1f] mb-5
+  space-y-4
+  flex items-start gap-4
+  mt-1 h-5 w-5 flex-shrink-0 text-[#af52de]
+  text-[#1d1d1f] font-medium
+  text-[#86868b]
+  rounded-[20px] bg-[#34c759]/5 p-8 border border-[#34c759]/10
+  font-semibold
+  grid gap-6 md:grid-cols-2
+  overflow-hidden rounded-[2px] bg-white shadow-md
+  border-l-4 border-[#af52de] pl-6
+  text-[#1d1d1f] text-lg italic
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0071e3] text-white flex-shrink-0 font-semibold text-lg
+  rounded-[20px] bg-[#0071e3]/5 p-8 border border-[#0071e3]/10
+  space-y-5
+  text-[#1d1d1f] font-semibold mb-2
+  text-[#0071e3] hover:text-[#0077ed] underline ml-1
+  border-l-4 border-[#0071e3] pl-6
+  rounded-[16px] bg-gradient-to-br from-[#1d1d1f] to-[#424245] p-12 text-white mb-16
+  font-semibold mb-8 text-[20px]
+  flex items-start gap-5
+  flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold
+  font-semibold mb-1
+  text-white/80
+  text-center
+  inline-block rounded-[16px] bg-white p-10 border-2 border-[#1d1d1f] shadow-lg max-w-3xl
+  font-semibold text-[#1d1d1f] mb-5 text-[20px]
+  text-[#1d1d1f] text-lg leading-relaxed
+
+--- text content ---
+  'Core Design Methodology'
+  'AI as Design Partner'
+  'Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.'
+  'Core Principle: Real Users First, AI as Amplifier'
+  'While AI tools dramatically accelerated my process, all major design decisions were validated with real clinicians. AI helped me move faster, test more assumptions, and arrive at user interviews with better-informed questions — but human insight remained the source of truth.'
+  'Three Ways AI Transformed My Design Process'
+  'AI Personas'
+  'Created realistic clinician personas to test ideas throughout the day'
+  'Figma Make'
+  'Built and tested functional prototypes in hours instead of days'
+  'Iterative Testing'
+  'Validated assumptions daily before committing to high-fidelity designs'
+  'ChatGPT Personas: Always-On Design Partners'
+  'Why I Built AI Personas'
+  'Real user research is essential but happens in discrete sessions. Between those sessions, I needed a way to continuously pressure-test assumptions, explore edge cases, and refine flows without waiting days or weeks for the next interview.'
+  'Using ChatGPT, I created detailed personas based on real research — emergency room physicians, mental health therapists, general practitioners — each with specific workflows, pain points, technical comfort levels, and documentation requirements.'
+  'How I Used Them Daily'
+  'Quick concept validation:'
+  'Edge case exploration:'
+  'Workflow walkthroughs:'
+  ' Talking through entire user journeys with a persona to identify friction points'
+  'Example:'
+  'Figma Make: From Concept to Prototype in Hours'
+  'Testing interaction patterns and data structures without writing code'
+  'Why Rapid Prototyping Mattered'
+  "HealthTalk involved complex, multi-step workflows with heavy data manipulation — transcripts being parsed into reports, templates driving AI behavior, permissions controlling access. Static mockups couldn't capture how these systems would actually feel to use."
+  'My Figma Make Workflow'
+  '1. Design Core Screens (Figma)'
+  'Start in Figma — defining layouts, visual hierarchy, component patterns'
+  '2. Build Functional Prototype (Figma Make)'
+  'Create working versions with real interactions, editing, and data flows'
+  '3. Test with AI Personas + Stakeholders'
+  'Walk through prototypes with ChatGPT personas, then share with teams'
+  '4. Validate with Real Users'
+  'Test with actual clinicians — core interaction model already refined'
+  'Actual Example: MVP Prototype'
+  'ht-mvp-a-prototype.figma.site'
+  'This prototype helped validate core recording and transcription flows before a single line of production code was written.'
+  'The Complete AI-Augmented Design Cycle'
+  'Key Takeaway'
+  "AI tools didn't replace user research — they made every stage between research sessions more productive. I could test more ideas, catch more problems, and arrive at user interviews with better questions. The result: faster iteration cycles, higher-quality designs, and ultimately, a product that better served clinicians."
+
+--- hrefs ---
+  https://ht-mvp-a-prototype.figma.site
+
+======================================================================
+  FUNCTION xe  (function xe, lines 698-808)
+======================================================================
+
+--- classNames ---
+  py-24 md:py-32 bg-[#fbfbfd]
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  max-w-5xl mx-auto space-y-24
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight
+  text-lg text-[#1d1d1f] mb-6 leading-relaxed
+  text-lg text-[#1d1d1f] mb-10 leading-relaxed
+  rounded-lg bg-[rgba(255,255,255,0)] overflow-hidden
+  w-full h-auto object-contain rounded-md
+  grid grid-cols-1 md:grid-cols-2 gap-6
+  rounded-s overflow-hidden bg-white shadow-sm
+  w-full h-auto object-contain rounded-[2px]
+  grid grid-cols-2 md:grid-cols-3 gap-4
+  rounded-s  inline-block
+  w-full h-auto object-contain aspect-[9/16] rounded-lg
+
+--- text content ---
+  'The Conversation Begins'
+  'No fumbling with notepads. No mental juggling. Just a natural conversation with a safety net that ensures nothing falls through the cracks.'
+  'Three Minutes Later...'
+  "By the time she's back at her desk—literally three minutes later—a complete, structured clinical report is waiting for her. It's formatted in proper SOAP structure, includes all the key details from the conversation, and even has a patient-friendly summary ready to go."
+  'Need it in Spanish for the patient? One click. Ready to paste into the EHR system? Copy and done. Want to email it? Send. What used to take 45 minutes now takes 3 minutes of quick review and approval.'
+  'But Wait... Every Doctor is Different'
+  'Dr. Sarah is a pain management specialist. Her colleague Dr. James is a psychiatrist. Their documentation needs are completely different. Cookie-cutter templates? Not happening.'
+  "That's why HealthTalk lets doctors build their own custom templates—no coding required. Dr. Sarah creates one for chronic pain assessments with specific fields for pain scales, medication tracking, and treatment plans. Dr. James builds his for mental health sessions with sections for mood assessment, safety planning, and therapeutic goals."
+  'A simple form-based builder with intuitive inputs, a live preview, and boom—reports that match exactly how they think and work. The entire healthcare organization can standardize their documentation while each specialty keeps its flexibility.'
+  'And It Goes Wherever You Go'
+  "Because doctors don't always work from their desks. They're making house calls, consulting in different hospital wings, or reviewing notes between appointments."
+  "HealthTalk works beautifully on mobile too. Record consultations and review transcripts—all from your phone while you're on the move. It's convenient to focus on the conversation without looking at the laptop, so having a mobile app is a huge help to focus on the patient. Dr. Sarah sometimes checks her past conversations and reports while waiting for her afternoon clinic to start. Efficiency? Check."
+
+======================================================================
+  FUNCTION ge  (function ge, lines 851-911)
+======================================================================
+
+--- classNames ---
+  py-24 md:py-32 bg-white
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  max-w-4xl mx-auto
+  text-center mb-16
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-tight
+  text-xl text-[#86868b]
+  grid gap-6 md:grid-cols-2 mb-16
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-[#0071e3]/20
+  mb-5 flex items-center justify-between
+  inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10 text-[#0071e3]
+  text-right
+  text-2xl font-semibold text-[#0071e3] text-[24px]
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  text-[#86868b] leading-relaxed
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-[#af52de]/20
+  inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10 text-[#af52de]
+  text-2xl font-semibold text-[#af52de] text-[24px]
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-[#34c759]/20
+  inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10 text-[#34c759]
+  text-2xl font-semibold text-[#34c759] text-[24px]
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-[#ff9500]/20
+  inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff9500]/10 text-[#ff9500]
+  text-2xl font-semibold text-[#ff9500] text-[24px]
+  rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white text-center
+  mx-auto mb-6 h-16 w-16 text-white opacity-90
+  text-3xl font-semibold mb-5 text-[36px]
+  text-white/90 text-lg leading-relaxed max-w-2xl mx-auto
+
+--- text content ---
+  'Results & Outcomes'
+  'High-level impact across productivity, adoption, and user satisfaction'
+  '~25 min → 2–3 min'
+  'Documentation Time Reduced'
+  'Reduced documentation time per session from approximately 25 minutes to 2–3 minutes'
+  '↑ Adoption'
+  'Increased Adoption'
+  'Increased adoption of AI-generated reports across teams with high user satisfaction'
+  'High Reuse'
+  'Template Reusability'
+  'High reuse rate of organization-level templates, reducing redundant work'
+  '↑ Productivity'
+  'Productivity Gains'
+  'Clear productivity gains visible in platform analytics across all user segments'
+  'Meaningful Impact on Patient Care'
+  'By reducing administrative burden, HealthTalk allows clinicians to spend more time with patients while maintaining high-quality, compliant documentation — directly improving both clinician experience and patient care.'
+
+======================================================================
+  FUNCTION ue  (function ue, lines 959-1042)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  flex items-center gap-2 text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm font-medium
+  flex gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  bg-[#f5f5f7] py-20 md:py-28
+  max-w-3xl mx-auto text-center
+  text-2xl md:text-3xl font-semibold text-[#1d1d1f] mb-4
+  text-lg text-[#86868b] mb-8
+  inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors
+
+--- text content ---
+  'Portfolio'
+  'Overview'
+  'AI Tools'
+  'Solutions'
+  'Results'
+  'Next Case Study'
+  'Pitch V2 - Internal Editorial Content Localization'
+
+--- hrefs ---
+  #overview
+  #ai-tools
+  #solutions
+  #results
+
+======================================================================
+  FUNCTION ve  (function ve, lines 1043-1406)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  flex items-center gap-2 text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm font-medium
+  flex gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28 bg-white
+  mx-auto max-w-4xl
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium text-[#86868b]
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-20 md:py-28 bg-[#fbfbfd]
+  mx-auto max-w-5xl
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-16 text-center
+  grid md:grid-cols-2 lg:grid-cols-3 gap-8
+  bg-white rounded-[16px] p-8 shadow-sm
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  text-[#86868b] leading-relaxed
+  py-20 md:py-28 bg-white
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-8 text-center
+  bg-[#f5f5f7] rounded-[16px] p-10 md:p-14
+  text-[#1d1d1f] leading-relaxed mb-6 text-[16px]
+  text-[#1d1d1f] leading-relaxed text-[16px]
+  text-xl text-[#86868b] text-center mb-16 max-w-3xl mx-auto leading-relaxed
+  grid grid-cols-3 gap-6
+  bg-white rounded-[16px] p-6 shadow-sm
+  flex items-start gap-4
+  flex-shrink-0 w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center
+  text-white font-semibold text-sm
+  font-semibold text-[#1d1d1f] mb-2 text-lg
+  text-sm text-[#86868b] leading-relaxed
+  grid md:grid-cols-2 gap-8
+  bg-[#f5f5f7] rounded-[16px] p-10
+  text-2xl font-semibold text-[#1d1d1f] mb-4 text-[36px]
+  text-lg text-[#86868b] leading-relaxed
+  mx-auto max-w-6xl
+  relative overflow-hidden rounded-[16px] shadow-lg bg-white
+  w-full h-auto
+  text-center text-lg text-[#1d1d1f] mt-6 font-medium
+  mb-20
+  font-semibold text-[#1d1d1f] mb-8
+  grid lg:grid-cols-2 gap-10 items-center
+  order-2 lg:order-1
+  text-sm text-[#86868b] mb-4 uppercase tracking-wide
+  space-y-4
+  flex items-start gap-3
+  flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2
+  text-lg text-[#1d1d1f]
+  order-1 lg:order-2
+  relative
+  relative overflow-hidden rounded-[16px] shadow-lg bg-black
+  absolute top-0 left-0 w-full h-full
+  mb-8
+  order-2 lg:order-2
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-8
+  text-lg text-[#1d1d1f] leading-relaxed mb-6
+  text-lg text-[#1d1d1f] leading-relaxed
+  grid md:grid-cols-3 gap-8
+  bg-white rounded-[16px] p-10 text-center shadow-sm
+  text-5xl md:text-6xl font-semibold text-[#0071e3] mb-4
+  text-xl text-[#1d1d1f] font-medium mb-2
+  text-[#86868b]
+  bg-[#f5f5f7] py-20 md:py-28
+  max-w-3xl mx-auto text-center
+  text-2xl md:text-3xl font-semibold text-[#1d1d1f] mb-4
+  text-lg text-[#86868b] mb-8
+  inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors
+
+--- text content ---
+  'Portfolio'
+  'Overview'
+  'Insights'
+  'Solutions'
+  'Results'
+  'Lead Product Designer'
+  'Pitch V2'
+  'Internal Editorial Content Localization'
+  'A platform used to create, initiate, manage, review, and track campaigns.'
+  'Domain'
+  'Editorial'
+  'Platform'
+  'Web'
+  'Type'
+  'Enterprise B2B'
+  'Problem'
+  'Key Insights'
+  'The project was done during corona, so all our communication was done through calls and emails. For the discovery phase, we used interviews as a research method.'
+  'Most of the insights are connected with hard communication between people on the same project. With their tight schedule, they need information fast especially when there is a need for immediate action, for example, a new song is out or some artist died.'
+  'Goal and Solutions'
+  'Since organizations used many different tools for communication and data exchange, tracking the whole work process was impossible. Our goal and solution are to create unique experiences for them to make their everyday tasks easier.'
+  'Personas'
+  'Producer'
+  'Responsible for the creative aspects of the campaign, including developing playlists and generating ideas.'
+  'Music Editor'
+  'Responsible for preparing and publishing the music materials required for the campaign.'
+  'Information architecture and hierarchy diagram'
+  'Design Solution'
+  'Dashboard'
+  'Dashboard - Projects list'
+  'List of projects on the left'
+  'Project overview on the right'
+  'Ability to expand phases and see a complete project commitment right on the dashboard'
+  'Project'
+  'Project commitment summary accessible in one click'
+  'Tabs for grouped information'
+  'Project collaboration'
+  'Phase'
+  'Phase commitment summary accessible in one click'
+  'Phase collaboration'
+  'Information layout pattern same as on project page for easy learning'
+  'Phase Edit'
+  'Editing Phase'
+  'Easy Edit mode'
+  'Featuring play layout redesigned'
+  'Showing only needed featuring plan'
+  'A consistent pattern used on project brief to create stability and confidence in users'
+  'In-app Notifications'
+  'In-app notifications'
+  'All notifications in one place'
+  'Ability to click on the specific notification that would lead to project/phase notification or comment is referring to'
+  'Reporting'
+  'When there are a lot of projects going on and you want to be updated on the most important campaigns, and projects you are involved in email reports come in handy. We made email reports personalized so users get only information they are interested in.'
+  'First, we added all the information we can to our report. Second, we had clean-up sessions with users and removed unnecessary data. We pushed the cleaned version to production to see how it will be received from the users so we could gather more feedback and did the third round of iterations on the design until everyone was pleased with the information they were getting.'
+  'Impact'
+  'Tool'
+  'Unified platform'
+  'Continents'
+  'Global reach'
+  '200+'
+  'Users'
+  'All connected'
+  'Next Case Study'
+  'Localization System - Radio-Friendly Song Cleaning'
+
+--- hrefs ---
+  #overview
+  #insights
+  #solutions
+  #results
+
+--- srcs ---
+  https://www.youtube.com/embed/AydJrLVAIEU
+  https://www.youtube.com/embed/3LPDhpovANg
+  https://www.youtube.com/embed/bQanONngQRU
+  https://www.youtube.com/embed/aFzUIfVHNIE
+  https://www.youtube.com/embed/t7mHwKJoqE4
+
+--- YouTube embeds ---
+  https://www.youtube.com/embed/AydJrLVAIEU
+  https://www.youtube.com/embed/3LPDhpovANg
+  https://www.youtube.com/embed/bQanONngQRU
+  https://www.youtube.com/embed/aFzUIfVHNIE
+  https://www.youtube.com/embed/t7mHwKJoqE4
+
+======================================================================
+  FUNCTION Ie  (function Ie, lines 1407-1714)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  flex items-center gap-2 text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm font-medium
+  flex gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28 bg-white
+  mx-auto max-w-4xl
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium text-[#86868b]
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-20 md:py-28 bg-[#fbfbfd]
+  mx-auto max-w-5xl
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-16 text-center
+  grid md:grid-cols-2 lg:grid-cols-3 gap-8
+  bg-white rounded-[16px] p-8 shadow-sm
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  text-[#86868b] leading-relaxed
+  py-20 md:py-28 bg-white
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-8 text-center
+  bg-[#f5f5f7] rounded-[16px] p-10 md:p-14 mb-12
+  text-xl text-[#1d1d1f] leading-relaxed mb-6
+  space-y-4
+  flex items-start gap-3
+  flex-shrink-0 w-2 h-2 rounded-full bg-[#0071e3] mt-2
+  text-lg text-[#1d1d1f]
+  bg-gradient-to-br from-[#0071e3] to-[#0051ba] rounded-[16px] p-12 text-white text-center
+  leading-relaxed text-[24px]
+  grid md:grid-cols-2 lg:grid-cols-3 gap-6
+  bg-white rounded-[16px] p-6 shadow-sm
+  flex items-start gap-4
+  flex-shrink-0 w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center
+  text-white font-semibold text-sm
+  text-lg font-semibold text-[#1d1d1f] mb-2
+  text-sm text-[#86868b] leading-relaxed
+  text-center mb-16
+  text-4xl md:text-5xl font-semibold text-[#1d1d1f] mb-4
+  text-xl text-[#86868b] italic
+  bg-white rounded-[16px] p-8 md:p-10 shadow-sm mb-12
+  grid lg:grid-cols-2 gap-8 items-center
+  text-xl font-semibold text-[#1d1d1f] mb-6
+  text-[#1d1d1f] leading-relaxed mb-4
+  text-[#1d1d1f] leading-relaxed
+  relative overflow-hidden rounded-[16px] shadow-lg
+  w-full h-auto
+  mb-16
+  text-3xl font-semibold text-[#1d1d1f] mb-12 text-center
+  grid md:grid-cols-3 gap-8
+  text-2xl font-semibold text-[#1d1d1f] mb-4 text-[24px]
+  mx-auto max-w-6xl
+  text-xl text-[#86868b]
+  mb-20
+  relative overflow-hidden rounded-[16px] shadow-lg mb-8
+  text-center text-[#86868b]
+  bg-[#f5f5f7] rounded-[16px] p-10 md:p-14 mb-20
+  grid md:grid-cols-3 gap-8 text-center
+  inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0071e3] text-white font-semibold text-2xl mb-4
+  text-xl font-semibold text-[#1d1d1f] mb-2
+  text-3xl font-semibold text-[#1d1d1f] mb-8
+  grid lg:grid-cols-2 gap-10 items-center
+  order-2 lg:order-1
+  text-lg text-[#1d1d1f] leading-relaxed mb-6
+  text-lg text-[#1d1d1f] leading-relaxed
+  text-sm text-[#86868b] mt-6 italic
+  order-1 lg:order-2
+  text-lg text-[#1d1d1f] leading-relaxed mb-8
+  text-sm text-[#86868b] mt-4 italic text-center
+  bg-gradient-to-br from-[#1d1d1f] to-[#424245] rounded-[16px] p-12 text-white
+  text-xl leading-relaxed mb-6
+  text-xl leading-relaxed
+  bg-[#f5f5f7] py-20 md:py-28
+  max-w-3xl mx-auto text-center
+  text-2xl md:text-3xl font-semibold text-[#1d1d1f] mb-4
+  text-lg text-[#86868b] mb-8
+  inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors
+
+--- text content ---
+  'Portfolio'
+  'Overview'
+  'Research'
+  'Solution'
+  'Results'
+  'Lead Product Designer'
+  'Localization System'
+  'Radio-Friendly Song Cleaning Platform'
+  'An application used to help clean explicit songs prior to playing them on radio stations. The software simplifies the process for teams across music platforms to create radio-friendly songs for specific radio stations.'
+  'Domain'
+  'Music Platform'
+  'Platform'
+  'Web'
+  'Type'
+  'Enterprise B2B'
+  'Problems'
+  'Key Insights'
+  'By conducting onsite discovery research, mapping workflow, and user persona information, I could visualize the main points that helped me determine possible MVP solutions.'
+  'Most Producers are in US or UK timezones'
+  'People who are doing localization are all around the world'
+  'Communication and getting things done fast is a priority for all'
+  'Goals'
+  'It can take days for a producer to get a response from the localization of their requested song. We set the goal to make producers know the progress of cleaning all the time so they can plan radio playlists with ease.'
+  'Solutions'
+  'Empathise, Understand'
+  'Contemplating ideas in the evening.'
+  'London Visit'
+  'Team of: designer, head of delivery, team lead, and project manager visited stakeholders and users in London.'
+  'We had a couple of long days of talking and questioning the people in the studio. The main focus was understanding workflows and gathering data that help us in future decisions.'
+  'Roles'
+  'Producers'
+  'People who are making playlists for their radio shows. They need clean songs or songs flagged explicit content. Their timeframe is tight and usually, they work ad hoc. Lots of times happen when they have just published a song they want in their show so they need cleaning fast.'
+  'Content Operations'
+  'People who are in between producers and localization. They get the list of songs and create tasks, follow the progress and make sure songs are cleaned in time. They do a lot of emailing and phone calls because on-air anything can happen.'
+  'Localization'
+  'People with multilingual skills all around the world. Their task is to listen to the song, find explicit content, flag it and send it back to content operation.'
+  'Design Solution'
+  'Define, Ideate, Prototype, Test, and Do It Again :)'
+  'Information architecture'
+  'Ideation flow sketch'
+  'Overview of tasks'
+  'Task details'
+  'Full localization tool'
+  'Tasklist'
+  'A producer needs to have a dashboard where they can add a task (songs) that needs cleaning of explicit content.'
+  "Aside from having a task list, they needed filtering, pausing, reassigning the task, option to listen to the song (this part is removed from the UI because of a clear indication of the client's identity)."
+  'Admin task list screen'
+  'Song Details'
+  'Aside from metadata of the song task details screen had to contain song lyrics and a full overview of song localization status.'
+  'Admins can assign or reassign people since it is a fast pace workflow and everything is moving fast. Having all the flexibility they can have been a huge value.'
+  'Song details screen'
+  'People who work in localization had a task list similar to the OPS dashboard from where they can claim the task. In task details, they have a waveform, song lyrics, and the option to flag explicit content with notes.'
+  'Challenge was to build the option of selecting lyrics and having them displayed on the waveform and in the flag list at the same time.'
+  'The biggest challenge was listening to the song since you need a lot of permission to hear songs that are not yet published.'
+  'Localization screen'
+  'Time for Deep-Dive QA Iterations'
+  'During development feature by feature, constant quality assurance is a must. Designers are perfect for finding mistakes in the UI. They know how things should look and behave.'
+  'After each sprint, I would spend a couple of hours reviewing the application. This way we keep the quality of design at a high level, especially when working with top clients.'
+  'Next Case Study'
+  'HealthTalk - AI-Powered Clinical Documentation'
+
+--- hrefs ---
+  #overview
+  #research
+  #solution
+  #results
+
+======================================================================
+  FUNCTION Ae  (function Ae, lines 1715-1769)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white flex items-center justify-center px-6
+  w-full max-w-md
+  text-center mb-8
+  text-4xl font-semibold text-[#1d1d1f] mb-2
+  text-[#86868b]
+  bg-white rounded-[16px] p-8 shadow-lg
+  mb-6
+  block text-sm font-medium text-[#1d1d1f] mb-2
+  w-full px-4 py-3 rounded-[12px] border ${h ? 
+  mt-2 text-sm text-red-500
+  w-full bg-[#0071e3] text-white py-3 rounded-[12px] font-medium hover:bg-[#0051ba] transition-colors
+
+--- text content ---
+  'Portfolio Access'
+  'These projects were completed under NDA. Please enter the password to continue and do not share what you see.'
+  'Password'
+  'Incorrect password. Please try again.'
+  'Enter'
+
+✓ Done.

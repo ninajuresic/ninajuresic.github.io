@@ -1,0 +1,1002 @@
+======================================================================
+ALL FUNCTION DEFINITIONS AND LINE NUMBERS
+======================================================================
+  line    7  function a()
+  line   20  function w()
+  line   23  function v()
+  line   26  function N()
+  line   32  function k()
+  line   42  function y()
+  line   49  function _()
+  line   59  function L()
+  line   66  function I()
+  line   76  function A()
+  line   83  function S()
+  line   94  function T()
+  line   97  function P()
+  line  100  function j()
+  line  103  function C()
+  line  109  function M()
+  line  112  function R()
+  line  115  function B()
+  line  121  function D()
+  line  124  function G()
+  line  127  function H()
+  line  133  function U()
+  line  139  function E()
+  line  145  function W()
+  line  151  function z()
+  line  157  function O()
+  line  174  function V()
+  line  190  function J()
+  line  201  function q()
+  line  446  function Z()
+  line  471  function K()
+  line  479  function Y()
+  line  488  function te()
+  line  694  function ae()
+  line  698  function xe()
+  line  809  function pe()
+  line  851  function ge()
+  line  912  function fe()
+  line  959  function ue()
+  line 1043  function ve()
+  line 1407  function Ie()
+  line 1715  function Ae()
+
+======================================================================
+KEY SECTION FIRST-OCCURRENCE LINE NUMBERS
+======================================================================
+  HOME / function q: line 201
+  HEALTHTALK case study: line 38
+  PITCH V2 case study: line 257
+  LOCALIZATION case study: line 265
+  CV MODAL: line 175
+
+======================================================================
+  SECTION: HOME PAGE  (function q, lines 201-545)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+  relative overflow-hidden bg-white pt-20 pb-16 md:pt-28 md:pb-20
+  grid gap-16 lg:grid-cols-1 items-center
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-24 md:py-32 bg-[#fbfbfd]
+  max-w-4xl mx-auto
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight
+  text-lg text-[#1d1d1f] mb-6 leading-relaxed
+  text-lg text-[#1d1d1f] leading-relaxed
+  py-24 md:py-32 bg-white
+  max-w-5xl mx-auto
+  text-center mb-20
+  inline-flex items-center gap-2 rounded-full bg-[#af52de]/10 px-4 py-2 text-[#af52de] mb-6
+  font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight text-[36px]
+  text-lg text-[#86868b] max-w-3xl mx-auto leading-relaxed
+  mb-20 overflow-hidden rounded-[16px] bg-white shadow-lg
+  h-full w-full object-cover
+  mb-20 rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white
+  font-semibold mb-5 text-[20px]
+  text-white/90 text-lg leading-relaxed
+  mb-20
+  font-semibold text-[#1d1d1f] mb-12 text-center leading-tight text-[32px]
+  grid gap-6 md:grid-cols-3 mb-16
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10
+  font-semibold text-[#1d1d1f] mb-3 text-[18px]
+  text-[#86868b] leading-relaxed
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10
+
+--- text content (children) ---
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+  'Senior Product Designer'
+  'HealthTalk'
+  'AI-Powered Clinical Documentation Platform'
+  'Enterprise AI platform transforming clinical conversations into compliant medical documentation.'
+  'Domain'
+  'HealthTech'
+  'Platform'
+  'Web & Mobile'
+  'Type'
+  'Enterprise SaaS'
+  'Once Upon a Time...'
+  "Picture this: It's 6 PM. Dr. Sarah has just finished seeing her last patient—a heartfelt conversation about managing chronic pain. But her day isn't over. Not even close."
+  'She opens her laptop and begins the dreaded task: writing clinical reports. One by one, she recalls each conversation, structures her notes into proper medical format, ensures everything meets compliance standards, and translates summaries for patients who speak different languages.'
+  "Hours pass. It's now 9 PM. Dr. Sarah closes her laptop, exhausted—not from healing patients, but from paperwork. And tomorrow? She'll do it all over again."
+  'Enter HealthTalk'
+  'What if Dr. Sarah could just... talk to her patients and have everything documented automatically? What if the AI could listen, understand, and transform those conversations into perfectly structured clinical reports?'
+  "That's exactly what HealthTalk does. It's not magic—it's thoughtful AI-powered design that turns hours of administrative burden into minutes of review time."
+  'Dr. Sarah now leaves the clinic at 6:15 PM. Same patient care, zero overtime paperwork.'
+  'Core Design Methodology'
+  'AI as Design Partner'
+  'Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.'
+  'Core Principle: Real Users First, AI as Amplifier'
+  'While AI tools dramatically accelerated my process, all major design decisions were validated with real clinicians. AI helped me move faster, test more assumptions, and arrive at user interviews with better-informed questions — but human insight remained the source of truth.'
+  'Three Ways AI Transformed My Design Process'
+  'AI Personas'
+  'Created realistic clinician personas to test ideas throughout the day'
+  'Figma Make'
+  'Built and tested functional prototypes in hours instead of days'
+
+--- href values ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+
+======================================================================
+  SECTION: HEALTHTALK CASE STUDY  (lines 32-441)
+======================================================================
+
+--- classNames ---
+  font-['Montserrat:Regular',sans-serif] font-normal grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0
+  [grid-area:1_/_1] leading-[normal] ml-0 mt-0 relative text-[#333] text-[13px] text-nowrap tracking-[-0.078px]
+  [grid-area:1_/_1] leading-[normal] ml-0 mt-[21px] relative text-[#797979] text-[10px] text-nowrap tracking-[-0.06px] uppercase
+  [grid-area:1_/_1] leading-[13px] ml-0 mt-[38px] relative text-[#333] text-[10px] tracking-[-0.06px] w-[300px]
+  mb-[12px]
+  font-['Montserrat:Regular',sans-serif] font-normal grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[normal] place-items-start relative shrink-0
+  [grid-area:1_/_1] ml-0 mt-0 relative text-[#333] text-[13px] text-nowrap tracking-[-0.078px]
+  [grid-area:1_/_1] ml-0 mt-[21px] relative text-[#797979] text-[10px] text-nowrap tracking-[-0.06px] uppercase
+  [grid-area:1_/_1] ml-0 mt-[38px] relative text-[#333] text-[10px] tracking-[-0.06px] w-[300px]
+  [grid-area:1_/_1] leading-[normal] ml-0 mt-[38px] relative text-[#333] text-[10px] tracking-[-0.06px] w-[300px]
+  absolute content-stretch flex flex-col gap-[10px] items-start left-[30px] top-[228px] w-[329px]
+  font-['Montserrat:Medium',sans-serif] font-medium leading-[normal] min-w-full relative shrink-0 text-[#333] text-[16px] tracking-[-0.096px] uppercase w-[min-content]
+  absolute contents left-[30px] top-[228px]
+  [grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative
+  [grid-area:1_/_1] font-['Montserrat:Regular',sans-serif] font-normal leading-[13px] ml-0 mt-0 relative text-[#333] text-[10px] tracking-[-0.06px] w-[237px]
+  [grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-[25px] place-items-start relative
+  grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0
+  [grid-area:1_/_1] font-['Montserrat:Medium',sans-serif] font-medium leading-[normal] ml-0 mt-0 relative text-[#333] text-[16px] text-nowrap tracking-[-0.096px] uppercase
+  [grid-area:1_/_1] font-['Montserrat:Regular',sans-serif] font-normal grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[normal] ml-0 mt-0 place-items-start relative text-nowrap
+  [grid-area:1_/_1] ml-0 mt-0 relative text-[#333] text-[13px] tracking-[-0.078px]
+  [grid-area:1_/_1] ml-0 mt-[21px] relative text-[#797979] text-[10px] tracking-[-0.06px] uppercase
+  [grid-area:1_/_1] font-['Montserrat:Regular',sans-serif] font-normal grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[normal] ml-0 mt-[45px] place-items-start relative text-nowrap
+  [grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-[28px] place-items-start relative
+  absolute content-stretch flex flex-col gap-[20px] items-start left-[379px] top-[249px] w-[242px]
+  font-['Montserrat:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[11px] text-black text-nowrap tracking-[-0.168px]
+  bg-white relative size-full
+  absolute bg-[#e7f3ff] h-[95px] left-0 top-[115px] w-[651px]
+  absolute font-['Montserrat:Regular',sans-serif] font-normal leading-[normal] left-[calc(50%-293.5px)] text-[30px] text-black text-nowrap top-[32px] tracking-[0.015px]
+  tracking-[-0.285px]
+  absolute font-['Montserrat:Regular',sans-serif] font-normal leading-[normal] left-[calc(50%-293.5px)] text-[#577da4] text-[21px] top-[67px] tracking-[-0.168px] w-[314px]
+  absolute bg-[#f6fbff] h-[632px] left-[359px] top-[210px] w-[292px]
+  w-full h-auto rounded-[2px]
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+
+--- text content (children) ---
+  'Medrecord/Senior UX Product designer'
+  'SEPTEMBER 2023 - PRESENT'
+  'Lead UX for AI-powered healthcare applications, improving clinical workflows and decision-making experiences. Improved alignment between design, engineering, and research, reducing turnaround time for new feature iterations. '
+  'Reference (jan-marc@healthtalk.ai)                                '
+  'KnowL Solutions / Senior UX Product designer'
+  'OCTOBER 2022 - SEPTEMBER 2023'
+  'Led UX/UI for learning platform; managed design system; collaborated with product and engineering teams.'
+  'Symphony / Product Designer'
+  'August 2019 - OCTOBER 2022'
+  'Designed features for a top Fortune 500 client in Cupertino, impacting workflows used by millions globally. Contributed to shipping high-visibility product updates under tight deadlines.'
+  'Reference (miralem@apple.com)                                '
+  'Propeller / UI/UX Designer'
+  'Mart 2019 - August 2019 '
+  'Led UX/UI direction in startup environment; produced end-to-end design outputs.'
+  'Saburly / UI/UX Designer'
+  'August 2017 - Mart 2019'
+  'Designed for Swedish clients; ideated internal product concepts and prototypes.'
+  'Reference (senad@saburly.com)'
+  'Social Explorer / UI/UX Designer'
+  'April 2015 - July 2017'
+  'Contributed to award-winning government platforms including Webby-recognized projects.'
+  'PROFESSIONAL EXPERIENCE'
+  'UX Design, UI Design, Product Design, Interaction Design, Information Architecture, UCD, Wireframing, Prototyping, Design Systems, Usability Testing, Motion Design, Data-Informed Design, Accessibility (WCAG).'
+  'CORE SKILLS'
+  'Figma, Sketch, Principle, Adobe Creative Suite, Jira, Confluence, Slack, Abstract, HTML/CSS (fair use).'
+  'Tools & Technologies'
+  'AI-Driven Product Design, Healthcare UX, Complex Systems, User Flows, Cross-Functional Collaboration, Agile Product Development, Developer Handoff, Multiplatform Product Design.'
+  'Specialties'
+  'Academy of Fine Arts / M.A'
+  '2012- 2013, Sarajevo, BiH'
+  'Academy of Fine Arts / BA'
+  '2008- 2011, Sarajevo, BiH'
+  'Education'
+  'Senior Product Designer'
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+
+--- href values ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+
+======================================================================
+  SECTION: PITCH V2 CASE STUDY  (lines 201-845)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+  relative overflow-hidden bg-white pt-20 pb-16 md:pt-28 md:pb-20
+  grid gap-16 lg:grid-cols-1 items-center
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-24 md:py-32 bg-[#fbfbfd]
+  max-w-4xl mx-auto
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight
+  text-lg text-[#1d1d1f] mb-6 leading-relaxed
+  text-lg text-[#1d1d1f] leading-relaxed
+  py-24 md:py-32 bg-white
+  max-w-5xl mx-auto
+  text-center mb-20
+  inline-flex items-center gap-2 rounded-full bg-[#af52de]/10 px-4 py-2 text-[#af52de] mb-6
+  font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight text-[36px]
+  text-lg text-[#86868b] max-w-3xl mx-auto leading-relaxed
+  mb-20 overflow-hidden rounded-[16px] bg-white shadow-lg
+  h-full w-full object-cover
+  mb-20 rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white
+  font-semibold mb-5 text-[20px]
+  text-white/90 text-lg leading-relaxed
+  mb-20
+  font-semibold text-[#1d1d1f] mb-12 text-center leading-tight text-[32px]
+  grid gap-6 md:grid-cols-3 mb-16
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10
+  font-semibold text-[#1d1d1f] mb-3 text-[18px]
+  text-[#86868b] leading-relaxed
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10
+  mb-16 rounded-[16px] bg-[#fbfbfd] p-10 lg:p-12 border border-black/5
+  flex items-start gap-5 mb-8
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#af52de] text-white flex-shrink-0 font-semibold text-lg
+  font-semibold text-[#1d1d1f] mb-3 text-[20px]
+  space-y-8
+  text-xl font-semibold text-[#1d1d1f] mb-4
+  text-[#1d1d1f] mb-4 leading-relaxed
+  text-[#1d1d1f] leading-relaxed
+  rounded-[20px] bg-[#af52de]/5 p-8 border border-[#af52de]/10
+  text-xl font-semibold text-[#1d1d1f] mb-5
+  space-y-4
+  flex items-start gap-4
+  mt-1 h-5 w-5 flex-shrink-0 text-[#af52de]
+  rounded-[20px] bg-[#34c759]/5 p-8 border border-[#34c759]/10
+  font-semibold
+  grid gap-6 md:grid-cols-2
+  overflow-hidden rounded-[2px] bg-white shadow-md
+  border-l-4 border-[#af52de] pl-6
+  text-[#1d1d1f] text-lg italic
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0071e3] text-white flex-shrink-0 font-semibold text-lg
+  rounded-[20px] bg-[#0071e3]/5 p-8 border border-[#0071e3]/10
+  space-y-5
+  text-[#1d1d1f] font-semibold mb-2
+  text-[#0071e3] hover:text-[#0077ed] underline ml-1
+  border-l-4 border-[#0071e3] pl-6
+  rounded-[16px] bg-gradient-to-br from-[#1d1d1f] to-[#424245] p-12 text-white mb-16
+  font-semibold mb-8 text-[20px]
+  flex items-start gap-5
+  flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold
+  font-semibold mb-1
+  text-white/80
+  text-center
+  inline-block rounded-[16px] bg-white p-10 border-2 border-[#1d1d1f] shadow-lg max-w-3xl
+  font-semibold text-[#1d1d1f] mb-5 text-[20px]
+  text-[#1d1d1f] text-lg leading-relaxed
+  max-w-5xl mx-auto space-y-24
+  text-lg text-[#1d1d1f] mb-10 leading-relaxed
+  rounded-lg bg-[rgba(255,255,255,0)] overflow-hidden
+  w-full h-auto object-contain rounded-md
+  grid grid-cols-1 md:grid-cols-2 gap-6
+  rounded-s overflow-hidden bg-white shadow-sm
+  w-full h-auto object-contain rounded-[2px]
+  grid grid-cols-2 md:grid-cols-3 gap-4
+  rounded-s  inline-block
+  w-full h-auto object-contain aspect-[9/16] rounded-lg
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-16 text-center leading-tight
+  grid gap-6 md:grid-cols-2 mb-16
+  rounded-[24px] bg-gradient-to-br from-[#0071e3]/5 to-[#0071e3]/10 p-8 border border-[#0071e3]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3] text-white
+  rounded-[24px] bg-gradient-to-br from-[#af52de]/5 to-[#af52de]/10 p-8 border border-[#af52de]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de] text-white
+  rounded-[24px] bg-gradient-to-br from-[#34c759]/5 to-[#34c759]/10 p-8 border border-[#34c759]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759] text-white
+  rounded-[24px] bg-gradient-to-br from-[#ff9500]/5 to-[#ff9500]/10 p-8 border border-[#ff9500]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff9500] text-white
+  rounded-[24px] bg-gradient-to-br from-[#ff3b30]/5 to-[#ff3b30]/10 p-8 border border-[#ff3b30]/10 md:col-span-2
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff3b30] text-white
+
+--- text content (children) ---
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+  'Senior Product Designer'
+  'HealthTalk'
+  'AI-Powered Clinical Documentation Platform'
+  'Enterprise AI platform transforming clinical conversations into compliant medical documentation.'
+  'Domain'
+  'HealthTech'
+  'Platform'
+  'Web & Mobile'
+  'Type'
+  'Enterprise SaaS'
+  'Once Upon a Time...'
+  "Picture this: It's 6 PM. Dr. Sarah has just finished seeing her last patient—a heartfelt conversation about managing chronic pain. But her day isn't over. Not even close."
+  'She opens her laptop and begins the dreaded task: writing clinical reports. One by one, she recalls each conversation, structures her notes into proper medical format, ensures everything meets compliance standards, and translates summaries for patients who speak different languages.'
+  "Hours pass. It's now 9 PM. Dr. Sarah closes her laptop, exhausted—not from healing patients, but from paperwork. And tomorrow? She'll do it all over again."
+  'Enter HealthTalk'
+  'What if Dr. Sarah could just... talk to her patients and have everything documented automatically? What if the AI could listen, understand, and transform those conversations into perfectly structured clinical reports?'
+  "That's exactly what HealthTalk does. It's not magic—it's thoughtful AI-powered design that turns hours of administrative burden into minutes of review time."
+  'Dr. Sarah now leaves the clinic at 6:15 PM. Same patient care, zero overtime paperwork.'
+  'Core Design Methodology'
+  'AI as Design Partner'
+  'Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.'
+  'Core Principle: Real Users First, AI as Amplifier'
+  'While AI tools dramatically accelerated my process, all major design decisions were validated with real clinicians. AI helped me move faster, test more assumptions, and arrive at user interviews with better-informed questions — but human insight remained the source of truth.'
+  'Three Ways AI Transformed My Design Process'
+  'AI Personas'
+  'Created realistic clinician personas to test ideas throughout the day'
+  'Figma Make'
+  'Built and tested functional prototypes in hours instead of days'
+  'Iterative Testing'
+  'Validated assumptions daily before committing to high-fidelity designs'
+  'ChatGPT Personas: Always-On Design Partners'
+  'Why I Built AI Personas'
+  'Real user research is essential but happens in discrete sessions. Between those sessions, I needed a way to continuously pressure-test assumptions, explore edge cases, and refine flows without waiting days or weeks for the next interview.'
+  'Using ChatGPT, I created detailed personas based on real research — emergency room physicians, mental health therapists, general practitioners — each with specific workflows, pain points, technical comfort levels, and documentation requirements.'
+  'How I Used Them Daily'
+  'Quick concept validation:'
+  'Edge case exploration:'
+  'Workflow walkthroughs:'
+  ' Talking through entire user journeys with a persona to identify friction points'
+  'Example:'
+  'Figma Make: From Concept to Prototype in Hours'
+  'Testing interaction patterns and data structures without writing code'
+  'Why Rapid Prototyping Mattered'
+  "HealthTalk involved complex, multi-step workflows with heavy data manipulation — transcripts being parsed into reports, templates driving AI behavior, permissions controlling access. Static mockups couldn't capture how these systems would actually feel to use."
+  'My Figma Make Workflow'
+  '1. Design Core Screens (Figma)'
+  'Start in Figma — defining layouts, visual hierarchy, component patterns'
+  '2. Build Functional Prototype (Figma Make)'
+  'Create working versions with real interactions, editing, and data flows'
+  '3. Test with AI Personas + Stakeholders'
+  'Walk through prototypes with ChatGPT personas, then share with teams'
+  '4. Validate with Real Users'
+  'Test with actual clinicians — core interaction model already refined'
+  'Actual Example: MVP Prototype'
+  'ht-mvp-a-prototype.figma.site'
+  'This prototype helped validate core recording and transcription flows before a single line of production code was written.'
+  'The Complete AI-Augmented Design Cycle'
+  'Key Takeaway'
+  "AI tools didn't replace user research — they made every stage between research sessions more productive. I could test more ideas, catch more problems, and arrive at user interviews with better questions. The result: faster iteration cycles, higher-quality designs, and ultimately, a product that better served clinicians."
+  'The Conversation Begins'
+  'No fumbling with notepads. No mental juggling. Just a natural conversation with a safety net that ensures nothing falls through the cracks.'
+  'Three Minutes Later...'
+  "By the time she's back at her desk—literally three minutes later—a complete, structured clinical report is waiting for her. It's formatted in proper SOAP structure, includes all the key details from the conversation, and even has a patient-friendly summary ready to go."
+  'Need it in Spanish for the patient? One click. Ready to paste into the EHR system? Copy and done. Want to email it? Send. What used to take 45 minutes now takes 3 minutes of quick review and approval.'
+  'But Wait... Every Doctor is Different'
+  'Dr. Sarah is a pain management specialist. Her colleague Dr. James is a psychiatrist. Their documentation needs are completely different. Cookie-cutter templates? Not happening.'
+  "That's why HealthTalk lets doctors build their own custom templates—no coding required. Dr. Sarah creates one for chronic pain assessments with specific fields for pain scales, medication tracking, and treatment plans. Dr. James builds his for mental health sessions with sections for mood assessment, safety planning, and therapeutic goals."
+  'A simple form-based builder with intuitive inputs, a live preview, and boom—reports that match exactly how they think and work. The entire healthcare organization can standardize their documentation while each specialty keeps its flexibility.'
+  'And It Goes Wherever You Go'
+  "Because doctors don't always work from their desks. They're making house calls, consulting in different hospital wings, or reviewing notes between appointments."
+  "HealthTalk works beautifully on mobile too. Record consultations and review transcripts—all from your phone while you're on the move. It's convenient to focus on the conversation without looking at the laptop, so having a mobile app is a huge help to focus on the patient. Dr. Sarah sometimes checks her past conversations and reports while waiting for her afternoon clinic to start. Efficiency? Check."
+  'Design Principles I Applied'
+  'Trust Before Automation'
+  'AI supports decisions, never hides logic. Always show the reasoning and allow human override.'
+  'Cognitive Load Reduction'
+  'Clear hierarchy and progressive disclosure ensure information is presented at the right time.'
+  'Clinical Alignment'
+  'Workflows mirror real clinical thinking patterns, making the tool feel natural to medical professionals.'
+  'Scalability'
+  'Reusable components and patterns across features ensure consistency and faster iteration.'
+  'Human-in-the-Loop AI'
+
+--- href values ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+  https://ht-mvp-a-prototype.figma.site
+
+======================================================================
+  SECTION: LOCALIZATION CASE STUDY  (lines 201-845)
+======================================================================
+
+--- classNames ---
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+  relative overflow-hidden bg-white pt-20 pb-16 md:pt-28 md:pb-20
+  grid gap-16 lg:grid-cols-1 items-center
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-24 md:py-32 bg-[#fbfbfd]
+  max-w-4xl mx-auto
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight
+  text-lg text-[#1d1d1f] mb-6 leading-relaxed
+  text-lg text-[#1d1d1f] leading-relaxed
+  py-24 md:py-32 bg-white
+  max-w-5xl mx-auto
+  text-center mb-20
+  inline-flex items-center gap-2 rounded-full bg-[#af52de]/10 px-4 py-2 text-[#af52de] mb-6
+  font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight text-[36px]
+  text-lg text-[#86868b] max-w-3xl mx-auto leading-relaxed
+  mb-20 overflow-hidden rounded-[16px] bg-white shadow-lg
+  h-full w-full object-cover
+  mb-20 rounded-[16px] bg-gradient-to-br from-[#0071e3] to-[#0051ba] p-12 text-white
+  font-semibold mb-5 text-[20px]
+  text-white/90 text-lg leading-relaxed
+  mb-20
+  font-semibold text-[#1d1d1f] mb-12 text-center leading-tight text-[32px]
+  grid gap-6 md:grid-cols-3 mb-16
+  rounded-[24px] bg-[#fbfbfd] p-8 border border-black/5
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de]/10
+  font-semibold text-[#1d1d1f] mb-3 text-[18px]
+  text-[#86868b] leading-relaxed
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3]/10
+  text-xl font-semibold text-[#1d1d1f] mb-3
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759]/10
+  mb-16 rounded-[16px] bg-[#fbfbfd] p-10 lg:p-12 border border-black/5
+  flex items-start gap-5 mb-8
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#af52de] text-white flex-shrink-0 font-semibold text-lg
+  font-semibold text-[#1d1d1f] mb-3 text-[20px]
+  space-y-8
+  text-xl font-semibold text-[#1d1d1f] mb-4
+  text-[#1d1d1f] mb-4 leading-relaxed
+  text-[#1d1d1f] leading-relaxed
+  rounded-[20px] bg-[#af52de]/5 p-8 border border-[#af52de]/10
+  text-xl font-semibold text-[#1d1d1f] mb-5
+  space-y-4
+  flex items-start gap-4
+  mt-1 h-5 w-5 flex-shrink-0 text-[#af52de]
+  rounded-[20px] bg-[#34c759]/5 p-8 border border-[#34c759]/10
+  font-semibold
+  grid gap-6 md:grid-cols-2
+  overflow-hidden rounded-[2px] bg-white shadow-md
+  border-l-4 border-[#af52de] pl-6
+  text-[#1d1d1f] text-lg italic
+  inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0071e3] text-white flex-shrink-0 font-semibold text-lg
+  rounded-[20px] bg-[#0071e3]/5 p-8 border border-[#0071e3]/10
+  space-y-5
+  text-[#1d1d1f] font-semibold mb-2
+  text-[#0071e3] hover:text-[#0077ed] underline ml-1
+  border-l-4 border-[#0071e3] pl-6
+  rounded-[16px] bg-gradient-to-br from-[#1d1d1f] to-[#424245] p-12 text-white mb-16
+  font-semibold mb-8 text-[20px]
+  flex items-start gap-5
+  flex h-10 w-10 items-center justify-center rounded-full bg-white/10 flex-shrink-0 font-semibold
+  font-semibold mb-1
+  text-white/80
+  text-center
+  inline-block rounded-[16px] bg-white p-10 border-2 border-[#1d1d1f] shadow-lg max-w-3xl
+  font-semibold text-[#1d1d1f] mb-5 text-[20px]
+  text-[#1d1d1f] text-lg leading-relaxed
+  max-w-5xl mx-auto space-y-24
+  text-lg text-[#1d1d1f] mb-10 leading-relaxed
+  rounded-lg bg-[rgba(255,255,255,0)] overflow-hidden
+  w-full h-auto object-contain rounded-md
+  grid grid-cols-1 md:grid-cols-2 gap-6
+  rounded-s overflow-hidden bg-white shadow-sm
+  w-full h-auto object-contain rounded-[2px]
+  grid grid-cols-2 md:grid-cols-3 gap-4
+  rounded-s  inline-block
+  w-full h-auto object-contain aspect-[9/16] rounded-lg
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-16 text-center leading-tight
+  grid gap-6 md:grid-cols-2 mb-16
+  rounded-[24px] bg-gradient-to-br from-[#0071e3]/5 to-[#0071e3]/10 p-8 border border-[#0071e3]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0071e3] text-white
+  rounded-[24px] bg-gradient-to-br from-[#af52de]/5 to-[#af52de]/10 p-8 border border-[#af52de]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#af52de] text-white
+  rounded-[24px] bg-gradient-to-br from-[#34c759]/5 to-[#34c759]/10 p-8 border border-[#34c759]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#34c759] text-white
+  rounded-[24px] bg-gradient-to-br from-[#ff9500]/5 to-[#ff9500]/10 p-8 border border-[#ff9500]/10
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff9500] text-white
+  rounded-[24px] bg-gradient-to-br from-[#ff3b30]/5 to-[#ff3b30]/10 p-8 border border-[#ff3b30]/10 md:col-span-2
+  mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff3b30] text-white
+
+--- text content (children) ---
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+  'Senior Product Designer'
+  'HealthTalk'
+  'AI-Powered Clinical Documentation Platform'
+  'Enterprise AI platform transforming clinical conversations into compliant medical documentation.'
+  'Domain'
+  'HealthTech'
+  'Platform'
+  'Web & Mobile'
+  'Type'
+  'Enterprise SaaS'
+  'Once Upon a Time...'
+  "Picture this: It's 6 PM. Dr. Sarah has just finished seeing her last patient—a heartfelt conversation about managing chronic pain. But her day isn't over. Not even close."
+  'She opens her laptop and begins the dreaded task: writing clinical reports. One by one, she recalls each conversation, structures her notes into proper medical format, ensures everything meets compliance standards, and translates summaries for patients who speak different languages.'
+  "Hours pass. It's now 9 PM. Dr. Sarah closes her laptop, exhausted—not from healing patients, but from paperwork. And tomorrow? She'll do it all over again."
+  'Enter HealthTalk'
+  'What if Dr. Sarah could just... talk to her patients and have everything documented automatically? What if the AI could listen, understand, and transform those conversations into perfectly structured clinical reports?'
+  "That's exactly what HealthTalk does. It's not magic—it's thoughtful AI-powered design that turns hours of administrative burden into minutes of review time."
+  'Dr. Sarah now leaves the clinic at 6:15 PM. Same patient care, zero overtime paperwork.'
+  'Core Design Methodology'
+  'AI as Design Partner'
+  'Designing an AI-powered product required using AI as a core tool in the design process itself. This section explores how I integrated AI tools throughout research, prototyping, and validation.'
+  'Core Principle: Real Users First, AI as Amplifier'
+  'While AI tools dramatically accelerated my process, all major design decisions were validated with real clinicians. AI helped me move faster, test more assumptions, and arrive at user interviews with better-informed questions — but human insight remained the source of truth.'
+  'Three Ways AI Transformed My Design Process'
+  'AI Personas'
+  'Created realistic clinician personas to test ideas throughout the day'
+  'Figma Make'
+  'Built and tested functional prototypes in hours instead of days'
+  'Iterative Testing'
+  'Validated assumptions daily before committing to high-fidelity designs'
+  'ChatGPT Personas: Always-On Design Partners'
+  'Why I Built AI Personas'
+  'Real user research is essential but happens in discrete sessions. Between those sessions, I needed a way to continuously pressure-test assumptions, explore edge cases, and refine flows without waiting days or weeks for the next interview.'
+  'Using ChatGPT, I created detailed personas based on real research — emergency room physicians, mental health therapists, general practitioners — each with specific workflows, pain points, technical comfort levels, and documentation requirements.'
+  'How I Used Them Daily'
+  'Quick concept validation:'
+  'Edge case exploration:'
+  'Workflow walkthroughs:'
+  ' Talking through entire user journeys with a persona to identify friction points'
+  'Example:'
+  'Figma Make: From Concept to Prototype in Hours'
+  'Testing interaction patterns and data structures without writing code'
+  'Why Rapid Prototyping Mattered'
+  "HealthTalk involved complex, multi-step workflows with heavy data manipulation — transcripts being parsed into reports, templates driving AI behavior, permissions controlling access. Static mockups couldn't capture how these systems would actually feel to use."
+  'My Figma Make Workflow'
+  '1. Design Core Screens (Figma)'
+  'Start in Figma — defining layouts, visual hierarchy, component patterns'
+  '2. Build Functional Prototype (Figma Make)'
+  'Create working versions with real interactions, editing, and data flows'
+  '3. Test with AI Personas + Stakeholders'
+  'Walk through prototypes with ChatGPT personas, then share with teams'
+  '4. Validate with Real Users'
+  'Test with actual clinicians — core interaction model already refined'
+  'Actual Example: MVP Prototype'
+  'ht-mvp-a-prototype.figma.site'
+  'This prototype helped validate core recording and transcription flows before a single line of production code was written.'
+  'The Complete AI-Augmented Design Cycle'
+  'Key Takeaway'
+  "AI tools didn't replace user research — they made every stage between research sessions more productive. I could test more ideas, catch more problems, and arrive at user interviews with better questions. The result: faster iteration cycles, higher-quality designs, and ultimately, a product that better served clinicians."
+  'The Conversation Begins'
+  'No fumbling with notepads. No mental juggling. Just a natural conversation with a safety net that ensures nothing falls through the cracks.'
+  'Three Minutes Later...'
+  "By the time she's back at her desk—literally three minutes later—a complete, structured clinical report is waiting for her. It's formatted in proper SOAP structure, includes all the key details from the conversation, and even has a patient-friendly summary ready to go."
+  'Need it in Spanish for the patient? One click. Ready to paste into the EHR system? Copy and done. Want to email it? Send. What used to take 45 minutes now takes 3 minutes of quick review and approval.'
+  'But Wait... Every Doctor is Different'
+  'Dr. Sarah is a pain management specialist. Her colleague Dr. James is a psychiatrist. Their documentation needs are completely different. Cookie-cutter templates? Not happening.'
+  "That's why HealthTalk lets doctors build their own custom templates—no coding required. Dr. Sarah creates one for chronic pain assessments with specific fields for pain scales, medication tracking, and treatment plans. Dr. James builds his for mental health sessions with sections for mood assessment, safety planning, and therapeutic goals."
+  'A simple form-based builder with intuitive inputs, a live preview, and boom—reports that match exactly how they think and work. The entire healthcare organization can standardize their documentation while each specialty keeps its flexibility.'
+  'And It Goes Wherever You Go'
+  "Because doctors don't always work from their desks. They're making house calls, consulting in different hospital wings, or reviewing notes between appointments."
+  "HealthTalk works beautifully on mobile too. Record consultations and review transcripts—all from your phone while you're on the move. It's convenient to focus on the conversation without looking at the laptop, so having a mobile app is a huge help to focus on the patient. Dr. Sarah sometimes checks her past conversations and reports while waiting for her afternoon clinic to start. Efficiency? Check."
+  'Design Principles I Applied'
+  'Trust Before Automation'
+  'AI supports decisions, never hides logic. Always show the reasoning and allow human override.'
+  'Cognitive Load Reduction'
+  'Clear hierarchy and progressive disclosure ensure information is presented at the right time.'
+  'Clinical Alignment'
+  'Workflows mirror real clinical thinking patterns, making the tool feel natural to medical professionals.'
+  'Scalability'
+  'Reusable components and patterns across features ensure consistency and faster iteration.'
+  'Human-in-the-Loop AI'
+
+--- href values ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+  https://ht-mvp-a-prototype.figma.site
+
+======================================================================
+  SECTION: CV MODAL  (lines 174-489)
+======================================================================
+
+--- classNames ---
+  bg-white relative size-full
+  absolute bg-[#e7f3ff] h-[95px] left-0 top-[115px] w-[651px]
+  absolute font-['Montserrat:Regular',sans-serif] font-normal leading-[normal] left-[calc(50%-293.5px)] text-[30px] text-black text-nowrap top-[32px] tracking-[0.015px]
+  tracking-[-0.285px]
+  absolute font-['Montserrat:Regular',sans-serif] font-normal leading-[normal] left-[calc(50%-293.5px)] text-[#577da4] text-[21px] top-[67px] tracking-[-0.168px] w-[314px]
+  absolute bg-[#f6fbff] h-[632px] left-[359px] top-[210px] w-[292px]
+  w-full h-auto rounded-[2px]
+  min-h-screen bg-white
+  fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5
+  mx-auto max-w-screen-xl px-6 lg:px-8
+  flex h-11 items-center justify-between
+  text-[#1d1d1f] font-semibold tracking-tight
+  flex items-center gap-8
+  text-sm text-[#1d1d1f] hover:text-[#0071e3] transition-colors
+  text-sm text-[#0071e3] hover:text-[#0077ed] transition-colors
+  relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 bg-white
+  mx-auto max-w-4xl text-center
+  md:text-2xl text-[rgb(72,72,74)] font-normal mb-3 leading-snug max-w-2xl mx-auto text-[24px]
+  md:text-2xl text-[rgb(68,68,70)] font-normal leading-snug max-w-2xl mx-auto text-[24px]
+  mt-16
+  text-lg text-[#86868b]
+  text-lg text-[#86868b] mt-4 bg-[#f5f5f7] px-6 py-4 rounded-[12px] border border-[#0071e3]/20
+  text-[#0071e3] hover:text-[#0077ed] transition-colors underline
+  py-20 md:py-32 bg-[#fbfbfd]
+  grid gap-20 md:gap-32
+  group cursor-pointer
+  grid gap-16 lg:grid-cols-2 lg:gap-20 items-center
+  relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500
+  bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed]
+  aspect-[16/10]
+  h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] rounded-[2px]
+  flex flex-wrap gap-2 mb-5
+  inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]
+  font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]
+  text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]
+  text-lg text-[#86868b] mb-8 leading-relaxed font-normal
+  flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300
+  text-lg
+  transition-transform group-hover:translate-x-1
+  bg-[#f5f5f7] py-12
+  flex flex-col items-center justify-center gap-6 text-center
+  font-semibold text-[#1d1d1f] mb-2 text-[20px]
+  text-[#86868b]
+  flex gap-8
+  text-[#424245] hover:text-[#0071e3] transition-colors
+  border-t border-black/5 pt-6 w-full max-w-2xl
+  fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4
+  relative max-w-4xl w-full bg-white rounded-[16px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col
+  flex items-center justify-between p-6 border-b border-black/5
+  text-xl font-semibold text-[#1d1d1f]
+  flex items-center gap-3
+  p-2.5 text-[#86868b] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition-all
+  h-5 w-5
+  overflow-auto flex-1 p-6
+  max-w-[651px] mx-auto bg-white
+  p-5 border-t border-black/5 bg-[#fbfbfd] flex justify-center
+  text-sm text-[#86868b]
+  relative overflow-hidden bg-white pt-20 pb-16 md:pt-28 md:pb-20
+  grid gap-16 lg:grid-cols-1 items-center
+  inline-flex items-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-2 text-[#86868b] mb-8
+  h-1.5 w-1.5 rounded-full bg-[#0071e3]
+  text-sm font-medium
+  text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]
+  text-[32px] md:text-[36px] text-[#1d1d1f] font-medium mb-8 leading-snug
+  text-lg text-[#86868b] mb-10 max-w-2xl leading-relaxed
+  grid grid-cols-3 gap-6 mb-10
+  flex flex-col
+  text-sm text-[#86868b] mb-1
+  text-[#1d1d1f] font-medium
+  py-24 md:py-32 bg-[#fbfbfd]
+  max-w-4xl mx-auto
+  text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-tight
+  text-lg text-[#1d1d1f] mb-6 leading-relaxed
+  text-lg text-[#1d1d1f] leading-relaxed
+  py-24 md:py-32 bg-white
+  max-w-5xl mx-auto
+
+--- text content (children) ---
+  'Senior Product Designer'
+  'Nina Juresic'
+  'Work'
+  'Download CV'
+  'Having the ability to impact your surroundings is the greatest gift of all.'
+  'I intend to use it well.'
+  'Check below three of my recent selected projects.'
+  'vibe coding project'
+  'View Case Study'
+  'Digital Product Designer'
+  'LinkedIn'
+  'ninajuresic@gmail.com'
+  'CV - Nina Juresic'
+  'Use Ctrl+P (Cmd+P on Mac) to save as PDF'
+  'HealthTalk'
+  'AI-Powered Clinical Documentation Platform'
+  'Enterprise AI platform transforming clinical conversations into compliant medical documentation.'
+  'Domain'
+  'HealthTech'
+  'Platform'
+  'Web & Mobile'
+  'Type'
+  'Enterprise SaaS'
+  'Once Upon a Time...'
+  "Picture this: It's 6 PM. Dr. Sarah has just finished seeing her last patient—a heartfelt conversation about managing chronic pain. But her day isn't over. Not even close."
+  'She opens her laptop and begins the dreaded task: writing clinical reports. One by one, she recalls each conversation, structures her notes into proper medical format, ensures everything meets compliance standards, and translates summaries for patients who speak different languages.'
+  "Hours pass. It's now 9 PM. Dr. Sarah closes her laptop, exhausted—not from healing patients, but from paperwork. And tomorrow? She'll do it all over again."
+  'Enter HealthTalk'
+  'What if Dr. Sarah could just... talk to her patients and have everything documented automatically? What if the AI could listen, understand, and transform those conversations into perfectly structured clinical reports?'
+  "That's exactly what HealthTalk does. It's not magic—it's thoughtful AI-powered design that turns hours of administrative burden into minutes of review time."
+  'Dr. Sarah now leaves the clinic at 6:15 PM. Same patient care, zero overtime paperwork.'
+
+--- href values ---
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+
+======================================================================
+  ALL YOUTUBE EMBED URLs IN FILE
+======================================================================
+  https://www.youtube.com/embed/AydJrLVAIEU
+  https://www.youtube.com/embed/3LPDhpovANg
+  https://www.youtube.com/embed/bQanONngQRU
+  https://www.youtube.com/embed/aFzUIfVHNIE
+  https://www.youtube.com/embed/t7mHwKJoqE4
+
+======================================================================
+  ALL href VALUES IN FILE
+======================================================================
+  #
+  #work
+  https://interview-pro--ninajuresic.replit.app/
+  https://linkedin.com/in/nina-juresic
+  mailto:ninajuresic@gmail.com
+  https://ht-mvp-a-prototype.figma.site
+  #overview
+  #ai-tools
+  #solutions
+  #results
+  #insights
+  #research
+  #solution
+
+✓ Done.
