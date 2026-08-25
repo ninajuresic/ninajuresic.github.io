@@ -21,6 +21,7 @@
     pitch:        document.getElementById('page-pitch'),
     localization: document.getElementById('page-localization'),
     kaphera:      document.getElementById('page-kaphera'),
+    ion:          document.getElementById('page-ion'),
   };
 
   const navHome    = document.getElementById('nav-home');
@@ -135,7 +136,7 @@
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
 
-  document.querySelectorAll('[id^="ht-"], [id^="pv-"], [id^="loc-"]').forEach(el => {
+  document.querySelectorAll('[id^="ht-"], [id^="pv-"], [id^="loc-"], [id^="ion-"]').forEach(el => {
     sectionObserver.observe(el);
   });
 
