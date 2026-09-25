@@ -5,17 +5,81 @@
 (function () {
   'use strict';
 
-  const PASSWORD   = 'SimbaisthebestCat';
-  const SESSION_KEY = 'portfolio_authenticated';
+  /* ── Per-project locks ─────────────────────────────────── */
+  const UNLOCK_PW  = 'SimbaisthebestCat';
+  const UNLOCK_KEY = 'portfolio_unlocked';
+  const LOCKED     = ['pitch', 'localization'];
 
-  /* ── DOM refs ── */
-  const passwordScreen = document.getElementById('password-screen');
-  const app            = document.getElementById('app');
-  const pwInput        = document.getElementById('pw-input');
-  const pwSubmit       = document.getElementById('pw-submit');
-  const pwError        = document.getElementById('pw-error');
+  function getUnlocked() {
+    try { return JSON.parse(sessionStorage.getItem(UNLOCK_KEY) || '[]'); } catch { return []; }
+  }
+  function saveUnlocked(list) {
+    sessionStorage.setItem(UNLOCK_KEY, JSON.stringify(list));
+  }
+  function isUnlocked(name) {
+    return !LOCKED.includes(name) || getUnlocked().includes(name);
+  }
+  function unlockProject(name) {
+    const list = getUnlocked();
+    if (!list.includes(name)) { list.push(name); saveUnlocked(list); }
+    revealCard(name);
+  }
+  function revealCard(name) {
+    const card = document.querySelector('[data-project="' + name + '"]');
+    if (!card) return;
+    card.querySelectorAll('.when-locked').forEach(function (el) { el.style.display = 'none'; });
+    card.querySelectorAll('.when-unlocked').forEach(function (el) { el.style.removeProperty('display'); });
+    card.classList.add('cursor-pointer');
+  }
 
-  const pages = {
+  /* Restore unlocked state on load */
+  getUnlocked().forEach(function (name) { revealCard(name); });
+
+  /* ── Unlock modal ──────────────────────────────────────── */
+  var modal        = document.getElementById('unlock-modal');
+  var unlockInput  = document.getElementById('unlock-input');
+  var unlockError  = document.getElementById('unlock-error');
+  var unlockSubmit = document.getElementById('unlock-submit');
+  var unlockCancel = document.getElementById('unlock-cancel');
+  var pendingProject = null;
+
+  function openModal(name) {
+    pendingProject = name;
+    unlockInput.value = '';
+    unlockError.textContent = '';
+    unlockInput.style.borderColor = '';
+    modal.style.display = 'flex';
+    setTimeout(function () { unlockInput.focus(); }, 100);
+  }
+  function closeModal() {
+    modal.style.display = 'none';
+    pendingProject = null;
+  }
+  function tryUnlock() {
+    if (unlockInput.value.trim() === UNLOCK_PW) {
+      unlockProject(pendingProject);
+      closeModal();
+      showPage(pendingProject);
+    } else {
+      unlockError.textContent = 'Incorrect password.';
+      unlockInput.value = '';
+      unlockInput.style.borderColor = '#ff3b30';
+      setTimeout(function () { unlockInput.style.borderColor = ''; }, 800);
+      unlockInput.focus();
+    }
+  }
+
+  unlockSubmit.addEventListener('click', tryUnlock);
+  unlockInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') tryUnlock();
+    unlockError.textContent = '';
+    unlockInput.style.borderColor = '';
+  });
+  unlockCancel.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+  /* ── DOM refs ──────────────────────────────────────────── */
+  var pages = {
     home:         document.getElementById('page-home'),
     healthtalk:   document.getElementById('page-healthtalk'),
     pitch:        document.getElementById('page-pitch'),
@@ -24,57 +88,21 @@
     ion:          document.getElementById('page-ion'),
   };
 
-  const navHome    = document.getElementById('nav-home');
-  const hamburger  = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
+  var hamburger  = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
 
-  /* ── Auth ── */
-  function isAuth() {
-    return sessionStorage.getItem(SESSION_KEY) === 'true';
-  }
-
-  function authenticate(pw) {
-    if (pw === PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, 'true');
-      showApp();
-    } else {
-      pwError.textContent = 'Incorrect password. Please try again.';
-      pwInput.value = '';
-      pwInput.focus();
-      pwInput.style.borderColor = '#ff3b30';
-      setTimeout(() => { pwInput.style.borderColor = ''; }, 800);
-    }
-  }
-
-  function showApp() {
-    passwordScreen.style.display = 'none';
-    app.style.display = 'block';
-    showPage('home');
-  }
-
-  /* ── Password events ── */
-  pwSubmit.addEventListener('click', () => authenticate(pwInput.value.trim()));
-  pwInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') authenticate(pwInput.value.trim());
-    pwError.textContent = '';
-    pwInput.style.borderColor = '';
-  });
-
-  /* ── Page routing ── */
-  let currentPage = 'home';
+  /* ── Page routing ──────────────────────────────────────── */
+  var currentPage = 'home';
 
   function showPage(name, scrollId) {
-    Object.values(pages).forEach(p => { if (p) p.style.display = 'none'; });
+    Object.values(pages).forEach(function (p) { if (p) p.style.display = 'none'; });
 
-    const target = pages[name];
-    if (target) {
-      target.style.display = 'block';
-      currentPage = name;
-    }
+    var target = pages[name];
+    if (target) { target.style.display = 'block'; currentPage = name; }
 
     if (scrollId) {
-      setTimeout(() => {
-        const el = document.getElementById(scrollId);
+      setTimeout(function () {
+        var el = document.getElementById(scrollId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
         else window.scrollTo({ top: 0, behavior: 'instant' });
       }, 50);
@@ -85,14 +113,29 @@
     closeMobileMenu();
   }
 
-  /* ── Delegated clicks ── */
-  document.addEventListener('click', (e) => {
-    /* Project cards → case study */
-    const proj = e.target.closest('[data-project]');
-    if (proj) { e.preventDefault(); showPage(proj.dataset.project); return; }
+  /* ── Delegated clicks ──────────────────────────────────── */
+  document.addEventListener('click', function (e) {
+    /* Unlock button on locked card — must check before project card */
+    var unlockBtn = e.target.closest('.unlock-btn');
+    if (unlockBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal(unlockBtn.dataset.unlock);
+      return;
+    }
+
+    /* Project cards */
+    var proj = e.target.closest('[data-project]');
+    if (proj) {
+      e.preventDefault();
+      var name = proj.dataset.project;
+      if (!isUnlocked(name)) { openModal(name); return; }
+      showPage(name);
+      return;
+    }
 
     /* Back / page links */
-    const pg = e.target.closest('[data-page]');
+    var pg = e.target.closest('[data-page]');
     if (pg) {
       e.preventDefault();
       showPage(pg.dataset.page, pg.dataset.scroll);
@@ -106,28 +149,23 @@
     if (e.target.closest('#nav-home')) { showPage('home'); return; }
   });
 
-  /* ── Mobile menu ── */
-  function toggleMobileMenu() {
-    mobileMenu.classList.toggle('hidden');
-  }
+  /* ── Mobile menu ───────────────────────────────────────── */
+  function toggleMobileMenu() { mobileMenu.classList.toggle('hidden'); }
+  function closeMobileMenu()  { mobileMenu.classList.add('hidden'); }
 
-  function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-  }
-
-  /* ── Nav scroll shadow ── */
-  const mainNav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
+  /* ── Nav scroll shadow ─────────────────────────────────── */
+  var mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function () {
     mainNav.classList.toggle('shadow-sm', window.scrollY > 8);
   }, { passive: true });
 
-  /* ── Active sub-nav link on scroll ── */
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  /* ── Active sub-nav link on scroll ────────────────────── */
+  var sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        const id = entry.target.id;
-        document.querySelectorAll('.sticky a[href^="#"]').forEach(a => {
-          const active = a.getAttribute('href') === `#${id}`;
+        var id = entry.target.id;
+        document.querySelectorAll('.sticky a[href^="#"]').forEach(function (a) {
+          var active = a.getAttribute('href') === '#' + id;
           a.classList.toggle('text-[#1d1d1f]', active);
           a.classList.toggle('font-medium', active);
           a.classList.toggle('text-[#86868b]', !active);
@@ -136,26 +174,20 @@
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
 
-  document.querySelectorAll('[id^="ht-"], [id^="pv-"], [id^="loc-"], [id^="ion-"]').forEach(el => {
+  document.querySelectorAll('[id^="ht-"], [id^="pv-"], [id^="loc-"], [id^="ion-"]').forEach(function (el) {
     sectionObserver.observe(el);
   });
 
-  /* ── Click-to-play YouTube ── */
-  document.addEventListener('click', (e) => {
-    const player = e.target.closest('.yt-player');
+  /* ── Click-to-play YouTube ─────────────────────────────── */
+  document.addEventListener('click', function (e) {
+    var player = e.target.closest('.yt-player');
     if (!player) return;
-    const vid = player.dataset.vid;
+    var vid = player.dataset.vid;
     if (!vid) return;
     window.open('https://www.youtube.com/watch?v=' + vid, '_blank', 'noopener');
   });
 
-  /* ── Init ── */
-  if (isAuth()) {
-    showApp();
-  } else {
-    passwordScreen.style.display = 'flex';
-    app.style.display = 'none';
-    setTimeout(() => pwInput.focus(), 150);
-  }
+  /* ── Init ──────────────────────────────────────────────── */
+  showPage('home');
 
 })();

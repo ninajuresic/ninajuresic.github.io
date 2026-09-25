@@ -41,21 +41,25 @@
       .kap-proto-btn { width: 100%; justify-content: center; }
     }
     @media print {
-      #password-screen, #app > nav, .no-print { display: none !important; }
+      #app > nav, .no-print { display: none !important; }
     }
   </style>
 </head>
 <body class="bg-white antialiased">
 
-<!-- ═══════════════════════════ PASSWORD ═══════════════════════════ -->
-<div id="password-screen" class="fixed inset-0 z-[9999] bg-white flex items-center justify-center p-6">
-  <div class="w-full max-w-sm text-center" style="animation: fadeUp .5s cubic-bezier(.34,1.56,.64,1) both">
-    <h1 class="text-xl font-semibold text-[#1d1d1f] mb-3">Portfolio Access</h1>
-    <p class="text-sm text-[#86868b] mb-8 leading-relaxed">These projects were completed under NDA. Please enter the password to continue and do not share what you see.</p>
-    <input id="pw-input" type="password" placeholder="Enter password"
+<!-- Per-project unlock modal -->
+<div id="unlock-modal" class="fixed inset-0 z-[9999] flex items-center justify-center p-6" style="display:none;background:rgba(0,0,0,0.45);backdrop-filter:blur(4px);">
+  <div class="bg-white rounded-[20px] p-8 w-full max-w-sm shadow-2xl text-center" style="animation:fadeUp .3s cubic-bezier(.34,1.56,.64,1) both">
+    <div class="w-12 h-12 rounded-full bg-[#f5f5f7] flex items-center justify-center mx-auto mb-5">
+      <svg class="w-5 h-5 text-[#1d1d1f]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h2 class="text-lg font-semibold text-[#1d1d1f] mb-2">NDA Protected</h2>
+    <p class="text-sm text-[#86868b] mb-6 leading-relaxed">This project was completed under NDA. Enter the password to view the case study.</p>
+    <input id="unlock-input" type="password" placeholder="Enter password"
       class="w-full px-4 py-3 rounded-[10px] border border-black/10 text-[#1d1d1f] text-sm bg-[#f5f5f7] focus:outline-none focus:ring-2 focus:ring-[#0071e3]/30 focus:border-[#0071e3] transition mb-2 placeholder-[#86868b]" />
-    <p id="pw-error" class="text-xs text-red-500 mb-3 min-h-[16px]"></p>
-    <button id="pw-submit" class="w-full bg-[#1d1d1f] text-white text-sm font-semibold py-3 rounded-[10px] hover:bg-black transition">Continue</button>
+    <p id="unlock-error" class="text-xs text-red-500 mb-3 min-h-[16px]"></p>
+    <button id="unlock-submit" class="w-full bg-[#1d1d1f] text-white text-sm font-semibold py-3 rounded-[10px] hover:bg-black transition mb-2">View Project</button>
+    <button id="unlock-cancel" class="w-full text-sm text-[#86868b] py-2 hover:text-[#1d1d1f] transition">Cancel</button>
   </div>
 </div>
 
@@ -64,7 +68,7 @@
 </style>
 
 <!-- ═══════════════════════════ APP ═══════════════════════════ -->
-<div id="app" style="display:none">
+<div id="app"></div>
 
 <!-- ── GLOBAL NAV ── -->
 <nav id="main-nav" class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-black/5 transition-shadow duration-300">
@@ -214,9 +218,19 @@
         </div>
 
         <!-- Card 3: Pitch V2 (image left) -->
-        <div class="group cursor-pointer" data-project="pitch">
+        <div class="group" data-project="pitch">
           <div class="grid gap-8 lg:grid-cols-2 lg:gap-20 items-center">
-            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+            <!-- locked: placeholder -->
+            <div class="when-locked relative overflow-hidden rounded-[8px] border border-black/8 flex items-center justify-center" style="min-height:280px;background:#f5f5f7;">
+              <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <svg class="w-5 h-5 text-[#86868b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <p class="text-xs font-medium text-[#86868b] uppercase tracking-widest">NDA</p>
+              </div>
+            </div>
+            <!-- unlocked: real image -->
+            <div class="when-unlocked relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500" style="display:none">
               <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] overflow-hidden">
                 <img src="images/4a2a93d768647bf00a836a3733cc288772164f19.png" alt="Pitch V2" class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]" />
               </div>
@@ -227,19 +241,29 @@
                 <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web</span>
                 <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Enterprise B2B</span>
               </div>
-              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Pitch V2</h2>
-              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Internal Editorial Content Localization</p>
-              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">A platform used to create, initiate, manage, review, and track campaigns.</p>
-              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
-                <span class="text-sm font-medium">View Case Study</span>
-                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              <!-- locked: Fortune 500 button -->
+              <div class="when-locked mb-6">
+                <button class="unlock-btn inline-flex items-center gap-2.5 rounded-[10px] border border-black/10 bg-[#f5f5f7] px-4 py-2.5 text-sm font-medium text-[#1d1d1f] hover:border-[#0071e3]/40 hover:bg-white transition-colors" data-unlock="pitch">
+                  <svg class="w-4 h-4 text-[#86868b] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Fortune 500 client
+                </button>
+              </div>
+              <!-- unlocked: title + details -->
+              <div class="when-unlocked" style="display:none">
+                <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Pitch V2</h2>
+                <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Internal Editorial Content Localization</p>
+                <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">A platform used to create, initiate, manage, review, and track campaigns.</p>
+                <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                  <span class="text-sm font-medium">View Case Study</span>
+                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Card 4: Localization (text left) -->
-        <div class="group cursor-pointer" data-project="localization">
+        <div class="group" data-project="localization">
           <div class="grid gap-8 lg:grid-cols-2 lg:gap-20 items-center">
             <div>
               <div class="flex flex-wrap gap-2 mb-5">
@@ -247,15 +271,35 @@
                 <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Platform: Web</span>
                 <span class="inline-flex items-center rounded-full bg-[#f5f5f7] px-3 py-1.5 text-xs font-medium text-[#86868b]">Type: Enterprise B2B</span>
               </div>
-              <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Localization System</h2>
-              <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Radio-Friendly Song Cleaning Platform</p>
-              <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">An application used to help clean explicit songs prior to playing them on radio stations.</p>
-              <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
-                <span class="text-sm font-medium">View Case Study</span>
-                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              <!-- locked: Fortune 500 button -->
+              <div class="when-locked mb-6">
+                <button class="unlock-btn inline-flex items-center gap-2.5 rounded-[10px] border border-black/10 bg-[#f5f5f7] px-4 py-2.5 text-sm font-medium text-[#1d1d1f] hover:border-[#0071e3]/40 hover:bg-white transition-colors" data-unlock="localization">
+                  <svg class="w-4 h-4 text-[#86868b] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Fortune 500 client
+                </button>
+              </div>
+              <!-- unlocked: title + details -->
+              <div class="when-unlocked" style="display:none">
+                <h2 class="font-semibold text-[#1d1d1f] mb-4 tracking-tight leading-tight group-hover:text-[#0071e3] transition-colors duration-300 text-[20px]">Localization System</h2>
+                <p class="text-[#1d1d1f] mb-5 font-medium leading-snug text-[18px]">Radio-Friendly Song Cleaning Platform</p>
+                <p class="text-lg text-[#86868b] mb-8 leading-relaxed font-normal">An application used to help clean explicit songs prior to playing them on radio stations.</p>
+                <div class="flex items-center gap-2 text-[#0071e3] group-hover:gap-3 transition-all duration-300">
+                  <span class="text-sm font-medium">View Case Study</span>
+                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
               </div>
             </div>
-            <div class="relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500">
+            <!-- locked: placeholder -->
+            <div class="when-locked relative overflow-hidden rounded-[8px] border border-black/8 flex items-center justify-center" style="min-height:280px;background:#f5f5f7;">
+              <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <svg class="w-5 h-5 text-[#86868b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <p class="text-xs font-medium text-[#86868b] uppercase tracking-widest">NDA</p>
+              </div>
+            </div>
+            <!-- unlocked: real image -->
+            <div class="when-unlocked relative overflow-hidden rounded-[8px] bg-white shadow-sm group-hover:shadow-xl transition-all duration-500" style="display:none">
               <div class="bg-gradient-to-br from-[#f5f5f7] to-[#e8e9ed] overflow-hidden">
                 <img src="images/fd90bc13c8eaa1108ecc5759253a45115e971d49.png" alt="Localization System" class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]" />
               </div>
