@@ -6,34 +6,24 @@
   'use strict';
 
   /* ── Per-project locks ─────────────────────────────────── */
-  const UNLOCK_PW  = 'SimbaisthebestCat';
-  const UNLOCK_KEY = 'portfolio_unlocked';
-  const LOCKED     = ['pitch', 'localization'];
+  var UNLOCK_PW = 'SimbaisthebestCat';
+  var LOCKED    = ['pitch', 'localization'];
+  var unlockedSet = [];
 
-  function getUnlocked() {
-    try { return JSON.parse(sessionStorage.getItem(UNLOCK_KEY) || '[]'); } catch { return []; }
-  }
-  function saveUnlocked(list) {
-    sessionStorage.setItem(UNLOCK_KEY, JSON.stringify(list));
-  }
   function isUnlocked(name) {
-    return !LOCKED.includes(name) || getUnlocked().includes(name);
+    return !LOCKED.includes(name) || unlockedSet.includes(name);
   }
   function unlockProject(name) {
-    const list = getUnlocked();
-    if (!list.includes(name)) { list.push(name); saveUnlocked(list); }
+    if (!unlockedSet.includes(name)) { unlockedSet.push(name); }
     revealCard(name);
   }
   function revealCard(name) {
-    const card = document.querySelector('[data-project="' + name + '"]');
+    var card = document.querySelector('[data-project="' + name + '"]');
     if (!card) return;
     card.querySelectorAll('.when-locked').forEach(function (el) { el.style.display = 'none'; });
     card.querySelectorAll('.when-unlocked').forEach(function (el) { el.style.removeProperty('display'); });
     card.classList.add('cursor-pointer');
   }
-
-  /* Restore unlocked state on load */
-  getUnlocked().forEach(function (name) { revealCard(name); });
 
   /* ── Unlock modal ──────────────────────────────────────── */
   var modal        = document.getElementById('unlock-modal');
