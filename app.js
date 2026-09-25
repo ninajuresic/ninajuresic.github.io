@@ -57,9 +57,10 @@
   }
   function tryUnlock() {
     if (unlockInput.value.trim() === UNLOCK_PW) {
-      unlockProject(pendingProject);
+      var name = pendingProject;
+      unlockProject(name);
       closeModal();
-      showPage(pendingProject);
+      showPage(name);
     } else {
       unlockError.textContent = 'Incorrect password.';
       unlockInput.value = '';
